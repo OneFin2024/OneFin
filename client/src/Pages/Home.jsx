@@ -299,7 +299,20 @@ function Home() {
         </div>{/* /.main-header__inner */}
       </div>{/* /.container-fluid */}
     </header>{/* /.main-header */}
+
+
+
+
+
+
+
+
     <section className="main-slider-one" id="home">
+
+
+
+    
+        
       <div className="main-slider-one__carousel easilon-owl__carousel owl-carousel" 
 //       data-owl-options="{
 //   &quot;margin&quot;: 0,
@@ -546,7 +559,28 @@ function Home() {
           </div>{/* /.container */}
         </div>{/* /.main-slider-one__form-wrapper__inner */}
       </div>{/* /.main-slider-one__form-wrapper */}
+
+
+
+
+
+
+
+
+
     </section>{/* /.main-slider-one */}
+
+
+
+
+
+
+
+
+
+
+
+
     <section className="about-one section-space" id="about">
       <div className="about-one__bg" style={{backgroundImage: 'url(assets/images/shapes/about-bg-1-1.png)'}} />{/* /.about-one__bg */}
       <div className="container">
