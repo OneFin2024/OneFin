@@ -1,15 +1,14 @@
-const config = require("./config.js");
-const { Sequelize, DataTypes } = require("sequelize");
+const { Sequelize } = require('sequelize');
+const config = require('../config/config')[process.env.NODE_ENV || 'development'];
 
-// create a database connection in your application using a Sequelize instance and the config file
-const sequelize = new Sequelize('database', 'username', 'password', {
+const sequelize = new Sequelize('OneFin', 'root', 'Yeesou.33', {
   host: 'localhost',
-  dialect: 'mysql' 
+  dialect: 'mysql', // replace 'mysql' with your dialect if it's different
 });
 
-//verify your connection here !
-connection.authenticate();
+const db = {};
+db.Sequelize = Sequelize;
+db.sequelize = sequelize;
+db.User = require('./User')(sequelize, Sequelize);
 
-
-
-module.exports = Book;
+module.exports = db;

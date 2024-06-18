@@ -1,6 +1,45 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { login, reset } from '../features/auth/authSlice';
+export const Login = () => {
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
 
-function Login() {
+  const { email, password } = formData;
+
+  const dispatch = useDispatch();
+  const { user, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.auth
+  );
+
+  useEffect(() => {
+    if (isSuccess) {
+      console.log('User logged in successfully');
+    }
+
+    if (isError) {
+      console.error(message);
+    }
+
+    dispatch(reset());
+  }, [user, isError, isSuccess, message, dispatch]);
+
+  const onChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    const userData = {
+      email,
+      password,
+    };
+
+    dispatch(login(userData));
+  };
   return (
     <div>
     <div className="custom-cursor__cursor" />
@@ -391,15 +430,27 @@ function Login() {
                 <div className="tabs-content">
                   <div className="tab active-tab fadeInUp animated" data-wow-delay="200ms" id="login" style={{display: 'block'}}>
                     <span className="login-page__tab-title">sign in your account</span>
-                    <form className="login-page__form">
+                    <form onSubmit={onSubmit} className="login-page__form">
                       <div className="login-page__form__input-box">
-                        <input type="email" placeholder="Your Email" />
+                      <input
+        type="email"
+        name="email"
+        value={email}
+        onChange={onChange}
+        placeholder="Email"
+        required
+      />
                         <span className="login-page__form__icon">
                           <i className="icon-mail-2" />
                         </span>{/* /.login-page__form__icon */}
                       </div>{/* /.login-page__form__input-box */}
                       <div className="login-page__form__input-box">
-                        <input type="password" placeholder="Password" className="login-page__password" />
+                        <input  type="password"
+        name="password"
+        value={password}
+        onChange={onChange}
+        placeholder="Password"
+        required className="login-page__password" />
                         <span className="login-page__form__icon">
                           <i className="icon-padlock" />
                         </span>{/* /.login-page__form__icon */}
@@ -418,6 +469,9 @@ function Login() {
                             in</span></button>
                       </div>{/* /.login-page__form__button */}
                     </form>{/* /.login-page__form */}
+                    {isLoading && <p>Loading...</p>}
+    {isError && <p>{message}</p>}
+    {isSuccess && <p>User logged in successfully</p>}
                     <div className="login-page__signin">
                       <h4 className="login-page__signin__title">don’t have an account? <a href="#">register</a>
                       </h4>{/* /.login-page__signin__title */}
@@ -659,4 +713,3 @@ function Login() {
   )
 }
 
-export default Login
