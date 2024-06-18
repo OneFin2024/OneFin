@@ -375,9 +375,11 @@ form {
   color: #555;
   display: flex;
   padding: 2px;
-  border: 1px solid currentColor;
+  /* border: 1px solid currentColor; */
   border-radius: 5px;
   margin: 0 0 30px;
+  flex-direction: column;
+
 }
 
 input[type="search"] {
