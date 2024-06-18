@@ -4200,7 +4200,7 @@ body.megamenu-popup-active .mobile-nav__content {
   position: relative;
   font-size: 18px;
   font-weight: 700;
-  color: var(--easilon-white, #ffffff);
+  color: var(--easilon-black4);
   text-transform: capitalize;
   line-height: 1.22;
 }

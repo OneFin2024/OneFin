@@ -1,9 +1,52 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { login, reset } from '../features/auth/authSlice';
 import Navbare from '../components/Navbare.jsx';
 import Topbar from "../components/Topbar.jsx";
 import Footer from "../components/Footer.jsx";
+ 
+export const Login = () => {
 
-function Login() {
+  const [hasaccount,sethasaccount] = useState(true)
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+    fullName: '',
+  });
+
+  const { email, password,fullName } = formData;
+
+  const dispatch = useDispatch();
+  const { user, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.auth
+  );
+
+  useEffect(() => {
+    if (isSuccess) {
+      console.log('User logged in successfully');
+    }
+
+    if (isError) {
+      console.error(message);
+    }
+
+    dispatch(reset());
+  }, [user, isError, isSuccess, message, dispatch]);
+
+  const onChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    const userData = {
+      email,
+      password,
+    };
+
+    dispatch(login(userData));
+  };
   return (
     <div>
     <div className="custom-cursor__cursor" />
@@ -43,6 +86,8 @@ function Login() {
           <div className="page-header__border page-header__border--5" />{/* /.page-header__border */}
         </div>{/* /.page-header__border-box */}
       </section>{/* /.page-header */}
+
+      
       <section className="login-page section-space">
         <div className="container">
           <div className="row gutter-y-80">
@@ -62,25 +107,38 @@ function Login() {
                     <h3 className="login-page__wrap__title">welcome</h3>
                   </div>{/* /.login-page__wrap__content */}
                   <ul className="tab-buttons">
-                    <li data-tab="#login" className="easilon-btn easilon-btn--white tab-btn active-btn"><span>log
+                    <li data-tab="#login" className="easilon-btn easilon-btn--white tab-btn active-btn"><span  onClick={()=>{sethasaccount(true)}} >log
                         in</span></li>
                     <li data-tab="#register" className="easilon-btn easilon-btn--white tab-btn">
-                      <span>register</span>
+                      <span onClick={()=>{sethasaccount(false)}}  >register </span>
                     </li>
                   </ul>{/* /.tab-buttons */}
                 </div>{/* /.login-page__wrap__top */}
                 <div className="tabs-content">
+                   { hasaccount ? 
                   <div className="tab active-tab fadeInUp animated" data-wow-delay="200ms" id="login" style={{display: 'block'}}>
-                    <span className="login-page__tab-title">sign in your account</span>
-                    <form className="login-page__form">
+                    <span className="login-page__tab-title">sign in your account</span>                   
+                   <form onSubmit={onSubmit} className="login-page__form">
                       <div className="login-page__form__input-box">
-                        <input type="email" placeholder="Your Email" />
+                      <input
+                            type="email"
+                            name="email"
+                            value={email}
+                            onChange={onChange}
+                            placeholder="Email"
+                            required
+                          />
                         <span className="login-page__form__icon">
                           <i className="icon-mail-2" />
                         </span>{/* /.login-page__form__icon */}
                       </div>{/* /.login-page__form__input-box */}
                       <div className="login-page__form__input-box">
-                        <input type="password" placeholder="Password" className="login-page__password" />
+                        <input  type="password"
+                              name="password"
+                              value={password}
+                              onChange={onChange}
+                              placeholder="Password"
+                              required className="login-page__password" />
                         <span className="login-page__form__icon">
                           <i className="icon-padlock" />
                         </span>{/* /.login-page__form__icon */}
@@ -98,9 +156,12 @@ function Login() {
                         <button type="submit" className="easilon-btn login-page__form__btn"><span>log
                             in</span></button>
                       </div>{/* /.login-page__form__button */}
-                    </form>{/* /.login-page__form */}
+                    </form>
+                    {isLoading && <p>Loading...</p>}
+                          {isError && <p>{message}</p>}
+                          {isSuccess && <p>User logged in successfully</p>}
                     <div className="login-page__signin">
-                      <h4 className="login-page__signin__title">don’t have an account? <a href="#">register</a>
+                      <h4 className="login-page__signin__title">don’t have an account? <a  onClick={()=>{sethasaccount(false)}} >register</a>
                       </h4>{/* /.login-page__signin__title */}
                       <span className="login-page__signin__text">or sign in with</span>
                       {/* /.login-page__signin__text */}
@@ -110,7 +171,79 @@ function Login() {
                         <button type="button" className="login-page__signin__btn"><img src="assets/images/shapes/facebook.png" alt="facebook" /></button>
                       </div>{/* /.login-page__signin__buttons */}
                     </div>{/* /.login-page__signin */}
-                  </div>{/* /.login-tab */}
+                  </div>
+                   :  
+                   <div className="tab active-tab fadeInUp animated" data-wow-delay="200ms" id="login" style={{display: 'block'}}>
+                    <span className="login-page__tab-title">Register a new account</span>     
+                    <form onSubmit={onSubmit} className="login-page__form">
+                    <div className="login-page__form__input-box">
+                    <input
+                          type="text"
+                          name="test"
+                          value={fullName}
+                          onChange={onChange}
+                          placeholder="fullName"
+                          required
+                        />
+                     
+                    </div>{/* /.login-page__form__input-box */}
+                    <div className="login-page__form__input-box">
+                      <input
+                            type="email"
+                            name="email"
+                            value={email}
+                            onChange={onChange}
+                            placeholder="Email"
+                            required
+                          />
+                       
+                      </div>
+                    <div className="login-page__form__input-box">
+                      <input  type="password"
+                            name="password"
+                            value={password}
+                            onChange={onChange}
+                            placeholder="Password"
+                            required className="login-page__password" />
+                     
+                      <i className="toggle-password pass-field-icon fa fa-fw fa-eye-slash" />
+                    </div>{/* /.login-page__form__input-box */}
+                    <div className="login-page__form__input-box login-page__form__input-box--bottom">
+                      <div className="login-page__form__checked-box">
+                        <input type="checkbox" name="remember-policy" id="remember-policy" />
+                        <label htmlFor="remember-policy"><span />remember me</label>
+                      </div>
+                     
+                    </div>{/* /.login-page__form__input-box */}
+                    <div className="login-page__form__input-box login-page__form__input-box--button">
+                      <button type="submit" className="easilon-btn login-page__form__btn"><span>Register</span></button>
+                    </div>{/* /.login-page__form__button */}
+                  </form>
+                    {isLoading && <p>Loading...</p>}
+                    {isError && <p>{message}</p>}
+                    {isSuccess && <p>User logged in successfully</p>}
+              <div className="login-page__signin">
+                <h4 className="login-page__signin__title">don’t have an account? <a  onClick={()=>{sethasaccount(true)}} >Login</a>
+                </h4>{/* /.login-page__signin__title */}
+                <span className="login-page__signin__text">or Register in with</span>
+                {/* /.login-page__signin__text */}
+                <div className="login-page__signin__buttons">
+                  <button type="button" className="login-page__signin__btn"><img src="assets/images/shapes/google.png" alt="google" /></button>
+                  <button type="button" className="login-page__signin__btn"><img src="assets/images/shapes/apple.png" alt="apple" /></button>
+                  <button type="button" className="login-page__signin__btn"><img src="assets/images/shapes/facebook.png" alt="facebook" /></button>
+                </div>{/* /.login-page__signin__buttons */}
+              </div>{/* /.login-page__signin */}
+            </div>
+
+
+                   
+                    
+                    }
+
+                    {/* Registre form */}
+                    
+                    
+                  
                   <div className="tab fadeInUp animated" data-wow-delay="200ms" id="register" style={{display: 'none'}}>
                     <span className="login-page__tab-title">sign up your account</span>
                     <form className="login-page__form">
@@ -236,4 +369,3 @@ function Login() {
   )
 }
 
-export default Login
