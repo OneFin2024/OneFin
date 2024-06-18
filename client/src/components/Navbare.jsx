@@ -15,117 +15,8 @@ function Navbare() {
             <nav className="main-header__nav main-menu">
               <ul className="main-menu__list">
                 <li className="dropdown megamenu">
-                  <a href="index.html">Home</a>
-                  <ul>
-                    <li>
-                      <section className="home-showcase">
-                        <div className="container">
-                          <div className="home-showcase__inner">
-                            <div className="row">
-                              <div className="col-md-6 col-lg-3">
-                                <div className="demo-one__card">
-                                  <div className="demo-one__image">
-                                    <img src="assets/images/home-showcase/home-showcase-1.jpg" alt="" />
-                                    <div className="demo-one__btns">
-                                      <a href="index.html" className="easilon-btn demo-one__btn">
-                                        <span>Multi Page</span>
-                                        <span className="easilon-btn__icon">
-                                          <i className="icon-double-right-arrow" />
-                                        </span>
-                                      </a>{/* /.thm-btn demo-one__btn */}
-                                      <a href="index-one-page.html" className="easilon-btn demo-one__btn">
-                                        <span>One Page</span>
-                                        <span className="easilon-btn__icon">
-                                          <i className="icon-double-right-arrow" />
-                                        </span>
-                                      </a>{/* /.thm-btn demo-one__btn */}
-                                    </div>{/* /.demo-one__btns */}
-                                  </div>{/* /.demo-one__image */}
-                                  <div className="demo-one__content">
-                                    <h3 className="demo-one__title">
-                                      <a href="index.html">Home Page 01</a>
-                                    </h3>{/* /.demo-one__title */}
-                                  </div>{/* /.demo-one__content */}
-                                </div>{/* /.demo-one__card */}
-                              </div>{/* /.col-md-6 col-lg-3 */}
-                              <div className="col-md-6 col-lg-3">
-                                <div className="demo-one__card">
-                                  <div className="demo-one__image">
-                                    <img src="assets/images/home-showcase/home-showcase-2.jpg" alt="" />
-                                    <div className="demo-one__btns">
-                                      <a href="index-2.html" className="easilon-btn demo-one__btn">
-                                        <span>Multi Page</span>
-                                        <span className="easilon-btn__icon">
-                                          <i className="icon-double-right-arrow" />
-                                        </span>
-                                      </a>{/* /.thm-btn demo-one__btn */}
-                                      <a href="index-2-one-page.html" className="easilon-btn demo-one__btn">
-                                        <span>One Page</span>
-                                        <span className="easilon-btn__icon">
-                                          <i className="icon-double-right-arrow" />
-                                        </span>
-                                      </a>{/* /.thm-btn demo-one__btn */}
-                                    </div>{/* /.demo-one__btns */}
-                                  </div>{/* /.demo-one__image */}
-                                  <div className="demo-one__content">
-                                    <h3 className="demo-one__title">
-                                      <a href="index-2.html">Home Page 02</a>
-                                    </h3>{/* /.demo-one__title */}
-                                  </div>{/* /.demo-one__content */}
-                                </div>{/* /.demo-one__card */}
-                              </div>{/* /.col-md-6 col-lg-3 */}
-                              <div className="col-md-6 col-lg-3">
-                                <div className="demo-one__card">
-                                  <div className="demo-one__image">
-                                    <img src="assets/images/home-showcase/home-showcase-3.jpg" alt="" />
-                                    <div className="demo-one__btns">
-                                      <a href="index-3.html" className="easilon-btn demo-one__btn">
-                                        <span>Multi Page</span>
-                                        <span className="easilon-btn__icon">
-                                          <i className="icon-double-right-arrow" />
-                                        </span>
-                                      </a>{/* /.thm-btn demo-one__btn */}
-                                      <a href="index-3-one-page.html" className="easilon-btn demo-one__btn">
-                                        <span>One Page</span>
-                                        <span className="easilon-btn__icon">
-                                          <i className="icon-double-right-arrow" />
-                                        </span>
-                                      </a>{/* /.thm-btn demo-one__btn */}
-                                    </div>{/* /.demo-one__btns */}
-                                  </div>{/* /.demo-one__image */}
-                                  <div className="demo-one__content">
-                                    <h3 className="demo-one__title">
-                                      <a href="index-3.html">Home Page 03</a>
-                                    </h3>{/* /.demo-one__title */}
-                                  </div>{/* /.demo-one__content */}
-                                </div>{/* /.demo-one__card */}
-                              </div>{/* /.col-md-6 col-lg-3 */}
-                              <div className="col-md-6 col-lg-3">
-                                <div className="demo-one__card">
-                                  <div className="demo-one__image">
-                                    <img src="assets/images/home-showcase/home-showcase-4.jpg" alt="" />
-                                    <div className="demo-one__btns">
-                                      <a href="index-dark.html" className="easilon-btn demo-one__btn">
-                                        <span>View Page</span>
-                                        <span className="easilon-btn__icon">
-                                          <i className="icon-double-right-arrow" />
-                                        </span>
-                                      </a>{/* /.thm-btn demo-one__btn */}
-                                    </div>{/* /.demo-one__btns */}
-                                  </div>{/* /.demo-one__image */}
-                                  <div className="demo-one__content">
-                                    <h3 className="demo-one__title">
-                                      <a href="index-dark.html">Home Dark</a>
-                                    </h3>{/* /.demo-one__title */}
-                                  </div>{/* /.demo-one__content */}
-                                </div>{/* /.demo-one__card */}
-                              </div>{/* /.col-md-6 col-lg-3 */}
-                            </div>{/* /.row */}
-                          </div>{/* /.home-showcase__inner */}
-                        </div>{/* /.container */}
-                      </section>
-                    </li>
-                  </ul>
+                  <a href="/">Home</a>
+               
                 </li>
                 <li>
                   <a href="about.html">About Us</a>
@@ -233,10 +124,7 @@ function Navbare() {
               <i className="icon-search" aria-hidden="true" />
               <span className="sr-only">Search</span>
             </a>{/* /.search-toggler */}
-            <a href="cart.html" className="main-header__cart">
-              <i className="icon-cart" aria-hidden="true" />
-              <span className="sr-only">Shopping Cart</span>
-            </a>{/* /.search-toggler */}
+           
             <a href="apply-loan.html" className="easilon-btn main-header__btn">
               <span>Apply for loan</span>
               <span className="easilon-btn__icon"><i className="icon-right-arrow" /></span>
