@@ -1,14 +1,14 @@
 import React from 'react'
 
-function Home() {
+export const Home = ()=> {
   return (
     <div>
-        <div>
-  <div className="custom-cursor__cursor" />
-  <div className="custom-cursor__cursor-two" />
-  {/* <div className="preloader">
-    <div className="preloader__image" style={{backgroundImage: 'url(assets/images/loader.png)'}} />
-  </div> */}
+      <div>
+        <div className="custom-cursor__cursor" />
+        {/* <div className="custom-cursor__cursor-two" />
+        <div className="preloader">
+          <div className="preloader__image" style={{backgroundImage: 'url(assets/images/loader.png)'}} />
+        </div> */}
   {/* /.preloader */}
   <div className="page-wrapper">
     <div className="topbar">
@@ -2090,11 +2090,8 @@ function Home() {
     <span className="scroll-to-top__wrapper"><span className="scroll-to-top__inner" /></span>
   </a>
   {/* template js */}
-</div>
-
-      
+      </div>
     </div>
   )
 }
 
-export default Home
