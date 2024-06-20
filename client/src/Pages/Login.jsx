@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, signup, reset } from '../features/auth/authSlice';
-import Navbare from '../components/Navbare.jsx';
-import Topbar from "../components/Topbar.jsx";
-import Footer from "../components/Footer.jsx";
+
+
 
 export const Login = () => {
   const [hasAccount, setHasAccount] = useState(true);
@@ -64,8 +63,7 @@ export const Login = () => {
       <div className="custom-cursor__cursor" />
       <div className="custom-cursor__cursor-two" />
       <div className="page-wrapper">
-        <Topbar />
-        <Navbare />
+     
 
         <section className="page-header">
           <div className="page-header__bg" style={{ backgroundImage: 'url(assets/images/backgrounds/page-header-bg-1-1.jpg)' }} />
@@ -254,7 +252,7 @@ export const Login = () => {
           </div>
         </section>
 
-        <Footer />
+     
       </div>
     </div>
   );

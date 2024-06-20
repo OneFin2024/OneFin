@@ -23,9 +23,9 @@ function Topbar() {
           <div className="topbar__right">
             <ul className="list-unstyled topbar__pages">
               <li><a href="Login">log in</a></li>
-              <li><a href="about.html">career</a></li>
+            
               <li><a href="about.html">media</a></li>
-              <li><a href="faq.html">Faq’s</a></li>
+              <li><a href="FAQ">Faq’s</a></li>
             </ul>{/* /.topbar__pages */}
             <div className="topbar__social">
               <a href="https://facebook.com">
