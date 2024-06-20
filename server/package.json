@@ -4,7 +4,9 @@
   "description": "technical-assessment",
   "main": "index.js",
   "scripts": {
-    "server-dev": "nodemon index.js"
+    "server-dev": "nodemon index.js",
+    "sync-db": "node ./sync-script.js"
+
   },
   "author": "brahim ben salah",
   "license": "ISC",

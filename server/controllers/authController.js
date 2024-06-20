@@ -3,14 +3,23 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 exports.signup = async (req, res) => {
-  const { username, email, password } = req.body;
-  try {
-    const user = await db.User.create({ username, email, password });
-    res.status(201).json({ message: 'User created successfully', user });
-  } catch (error) {
-    res.status(400).json({ error: error.message });
+  const { fullName, email, phone, password } = req.body;
+    console.log(req.body);
+  if (!fullName || !email || !phone || !password) {
+    return res.status(400).json({ message: 'All fields are required' });
   }
-};
+
+  try {
+    const user = await db.User.create({ fullName, email, phone, password });
+    res.status(201).json({ message: 'User registered successfully', user });
+  } catch (error) {
+    if (error.name === 'SequelizeUniqueConstraintError') {
+      return res.status(400).json({ message: 'Email already exists' });
+    }
+    res.status(500).json({ message: 'Server error', error });
+    console.log(error);
+  }
+}
 
 exports.login = async (req, res) => {
   const { email, password } = req.body;
