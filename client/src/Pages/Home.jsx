@@ -1,7 +1,5 @@
 import React from 'react'
-import Navbare from '../components/Navbare.jsx';
-import Topbar from "../components/Topbar.jsx";
-import Footer from "../components/Footer.jsx";
+
 import Slider from "../components/Slider.jsx";
 
 
@@ -19,8 +17,7 @@ export const Home = ()=> {
 
 
     
-  <Topbar/>
-  <Navbare/>
+
   <Slider/>
 
 
@@ -1378,7 +1375,7 @@ export const Home = ()=> {
         </div>{/* /.quick-loan-one__inner */}
       </div>{/* /.container */}
     </section>{/* /.quick-loan-one */}
-    <Footer/>
+    {/* <Footer/> */}
   </div>{/* /.page-wrapper */}
   <div className="mobile-nav__wrapper">
     <div className="mobile-nav__overlay mobile-nav__toggler" />

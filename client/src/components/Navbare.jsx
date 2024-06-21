@@ -19,9 +19,9 @@ function Navbare() {
                
                 </li>
                 <li>
-                  <a href="about.html">About Us</a>
+                  <a href="AboutUs">About Us</a>
                 </li>
-                <li className="dropdown">
+                {/* <li className="dropdown">
                   <a href="#">Our Services</a>
                   <ul>
                     <li><a href="services.html">Services</a></li>
@@ -35,61 +35,26 @@ function Navbare() {
                     <li><a href="service-d-bike-loan.html">bike loan</a></li>
                     <li><a href="service-d-property-loan.html">property loan</a></li>
                   </ul>
-                </li>
+                </li> */}
                 <li className="dropdown">
-                  <a href="#">Pages</a>
+                  <a href="#">Loan Programs</a>
                   <ul>
-                    <li><a href="team.html">Our Team</a></li>
-                    <li><a href="team-carousel.html">Team Carousel 01</a></li>
-                    <li><a href="team-carousel-2.html">Team Carousel 02</a></li>
-                    <li><a href="team-details.html">Team Details</a></li>
-                    <li><a href="testimonials-carousel.html">testimonials carousel 01</a></li>
-                    <li><a href="testimonials-carousel-2.html">testimonials carousel 02</a></li>
-                    <li><a href="history.html">Our History</a></li>
-                    <li>
-                      <a href="gallery.html">Gallery</a>
-                      <ul>
-                        <li><a href="gallery.html">Gallery masonry</a></li>
-                        <li><a href="gallery-filter.html">Gallery filter</a></li>
-                        <li><a href="gallery-grid.html">Gallery Grid</a></li>
-                        <li><a href="gallery-carousel.html">Gallery Carousel</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="apply-loan.html">apply loan</a></li>
-                    <li><a href="loan-eligibility.html">loan eligibility</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="404.html">404 Error</a></li>
+                    
+                    <li><a href="team-carousel.html">Program 1</a></li>
+                    <li><a href="team-carousel-2.html">Program 2</a></li>
+                    <li><a href="team-carousel-2.html">Program 3</a></li>
+                    
+                   
                   </ul>
                 </li>
                 <li className="dropdown">
-                  <a href="#">Shop</a>
-                  <ul>
-                    <li className="dropdown">
-                      <a href="#">Products</a>
-                      <ul>
-                        <li><a href="products.html">No sidebar</a></li>
-                        <li><a href="products-left.html">Left sidebar</a></li>
-                        <li><a href="products-right.html">Right sidebar</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="products-carousel.html">Products carousel</a></li>
-                    <li><a href="product-details.html">Product details</a></li>
-                    <li><a href="cart.html">Cart</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
-                  </ul>
+                  <a href="Testimonials">Testimonials</a>
+                 
                 </li>
                 <li className="dropdown">
                   <a href="#">News</a>
-                  <ul>
-                    <li className="dropdown">
-                      <a href="#">News grid</a>
-                      <ul>
-                        <li><a href="blog-grid.html">No sidebar</a></li>
-                        <li><a href="blog-grid-left.html">Left sidebar</a></li>
-                        <li><a href="blog-grid-right.html">Right sidebar</a></li>
-                      </ul>
-                    </li>
+                  {/* <ul>
+                    
                     <li className="dropdown">
                       <a href="#">News list</a>
                       <ul>
@@ -108,10 +73,10 @@ function Navbare() {
                         <li><a href="blog-details-right.html">Right sidebar</a></li>
                       </ul>
                     </li>
-                  </ul>
+                  </ul> */}
                 </li>
                 <li>
-                  <a href="contact.html">Contact Us</a>
+                  <a href="ContactUs">Contact Us</a>
                 </li>
               </ul>
             </nav>{/* /.main-header__nav */}
@@ -125,8 +90,9 @@ function Navbare() {
               <span className="sr-only">Search</span>
             </a>{/* /.search-toggler */}
            
-            <a href="apply-loan.html" className="easilon-btn main-header__btn">
-              <span>Apply for loan</span>
+            <a href="LoanApplication" className="easilon-btn main-header__btn">
+              <span>Prequalify Now
+              </span>
               <span className="easilon-btn__icon"><i className="icon-right-arrow" /></span>
             </a>{/* /.easilon-btn main-header__btn */}
           </div>{/* /.main-header__right */}
