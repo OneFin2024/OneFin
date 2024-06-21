@@ -29,7 +29,7 @@ async function preprocessAndOCR(imagePath) {
 }
 
 // Usage
-const imagePath = './test8.PNG'; // Change this to the actual image path
+const imagePath = './test.gif'; // Change this to the actual image path
 preprocessAndOCR(imagePath)
     .then(text => {
         console.log('Extracted Text:', text);
