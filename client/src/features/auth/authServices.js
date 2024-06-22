@@ -6,6 +6,10 @@ const API_URL = 'http://localhost:9987/api/auth/';
 const signup = async (userData) => {
     try {
       const response = await axios.post(API_URL + 'signup', userData);
+      localStorage.setItem('user', JSON.stringify(response.data));
+
+      window.location.href = '/';
+
       return response.data;
     } catch (error) {
       throw error.response.data;
@@ -17,7 +21,9 @@ const signup = async (userData) => {
     try {
       const response = await axios.post(API_URL + 'login', userData);
       if (response.data.token) {
+        console.log(response.data);
         localStorage.setItem('user', JSON.stringify(response.data));
+        window.location.href = '/';
       }
       return response.data;
     } catch (error) {

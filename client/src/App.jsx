@@ -32,7 +32,6 @@ let App = () => {
             <Route  path="/Testimonials" element={<Testimonials/>} >  </Route>
             <Route  path="/FAQ" element={<FAQ/>} >  </Route>
             <Route  path="/LoanApplication" element={<LoanApplication/>} >  </Route>
-            {/* <Route  path="/register" element={<Register/>} >  </Route> */}
           </Routes>
         </div>
       </Router>

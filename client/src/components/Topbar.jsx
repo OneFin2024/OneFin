@@ -1,6 +1,12 @@
 import React from 'react'
-
+  console.log(localStorage.getItem('user'));
+  
 function Topbar() {
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+    window.location.href = '/';
+    // You might want to force a component re-render or redirect the user to the login page here
+  };
   return (
     <div>
          <div className="topbar">
@@ -22,7 +28,16 @@ function Topbar() {
           </ul>{/* /.list-unstyled topbar__info */}
           <div className="topbar__right">
             <ul className="list-unstyled topbar__pages">
-              <li><a href="Login">log in</a></li>
+         
+            {localStorage.getItem('user') 
+              ? (
+                <>
+                 <li> Hello, {JSON.parse(localStorage.getItem('user')).user.fullName} </li>
+                <li>  <a style={{cursor:'pointer'}} onClick={handleLogout}>Logout</a></li>
+                </>
+              ) 
+              : <li><a href="Login">log in</a></li>
+            }
             
               <li><a href="about.html">media</a></li>
               <li><a href="FAQ">Faq’s</a></li>
