@@ -6,12 +6,13 @@
   "scripts": {
     "server-dev": "nodemon index.js",
     "sync-db": "node ./sync-script.js"
-
   },
   "author": "brahim ben salah",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.7.2",
     "bcryptjs": "^2.4.3",
+    "cheerio": "^1.0.0-rc.12",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
