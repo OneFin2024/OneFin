@@ -7,8 +7,6 @@ import { store } from './app/store';
 import Navbare from './components/Navbare.jsx';
 import Topbar from "./components/Topbar.jsx";
 import Footer from "./components/Footer.jsx";
-
-// import Register from "./Pages/Register.jsx";
 import AboutUs from "./Pages/AboutUs.jsx";
 import ContactUs from "./Pages/ContactUs.jsx";
 import Testimonials from "./Pages/Testimonials.jsx";

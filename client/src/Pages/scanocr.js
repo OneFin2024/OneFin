@@ -120,7 +120,7 @@ function processDetections(detections) {
 
 
 
-const imagePath = './test2.jpeg'; // Change this to the actual image path
+const imagePath = './test8.PNG'; 
 detectText(imagePath)
     .then(info => {
         console.log('Extracted Information:', JSON.stringify(info, null, 2));
