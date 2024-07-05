@@ -10,5 +10,9 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 db.User = require('./User')(sequelize, Sequelize);
+db.LoanPrequalify = require('./loanPrequalify')(sequelize,Sequelize)
+db.User.hasMany(db.LoanPrequalify, { foreignKey: 'userId' });
+db.LoanPrequalify.belongsTo(db.User, { foreignKey: 'userId' });
+
 
 module.exports = db;
