@@ -1,6 +1,7 @@
 const express = require('express');
 const db = require('./models');
 const authRoutes = require('./routes/authRoutes');
+const LoanRoutes = require('./routes/Loan.routes');
 const middleware =  require('./middlewares/authMiddleware')
 require('dotenv').config();
 const cors = require('cors');
@@ -20,6 +21,7 @@ app.use((err, req, res, next) => {
 });
 // app.use(middleware)
 app.use('/api/auth', authRoutes);
+app.use('/api/Loan', LoanRoutes);
 app.post('/loan-application', async (req, res) => {
   try {
     const loanApplication = await db.LoanPrequalify.create(req.body);
@@ -41,6 +43,8 @@ db.sequelize.authenticate()
   .catch(error => {
     console.error('Unable to connect to the database:', error);
   });
+ 
+
   // db.sequelize.sync({ alter: true })
   // .then(() => {
   //   console.log('Database sync successful');
