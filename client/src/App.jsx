@@ -12,6 +12,7 @@ import ContactUs from "./Pages/ContactUs.jsx";
 import Testimonials from "./Pages/Testimonials.jsx";
 import FAQ from "./Pages/FAQ.jsx";
 import LoanApplication from "./Pages/LoanApplication.jsx";
+import LoanProg from "./Pages/LoanProg.jsx";
 
 
 let App = () => {
@@ -19,11 +20,11 @@ let App = () => {
     <Provider store={store}>
          <Topbar/>
          <Navbare/>
-
       <Router>
         <div>
           <Routes>
             <Route exact  path="/" element={<Home/>} >  </Route>
+            <Route exact  path="/LoanProg" element={<LoanProg/>} >  </Route>
             <Route  path="/login" element={<Login/>} >  </Route>
             <Route  path="/AboutUs" element={<AboutUs/>} >  </Route>
             <Route  path="/ContactUs" element={<ContactUs/>} >  </Route>
