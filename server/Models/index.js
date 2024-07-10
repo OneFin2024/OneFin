@@ -22,5 +22,9 @@ db.User.hasMany(db.LoanPrequalify, { foreignKey: 'userId' });
 db.LoanPrequalify.belongsTo(db.User, { foreignKey: 'userId' });
 
 
+db.User.hasMany(db.Loan, { foreignKey: 'userId' });
+db.Loan.belongsTo(db.User, { foreignKey: 'userId' });
+
+
 
 module.exports = db;

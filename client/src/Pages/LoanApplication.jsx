@@ -140,13 +140,13 @@ const handleSubmit = async (e) => {
         />
         <div className="container">
           <div className="page-header__content">
-            <h2 className="page-header__title">Apply Loan</h2>
+            <h2 className="page-header__title">Prequalify</h2>
             <ul className="easilon-breadcrumb list-unstyled">
               <li>
                 <a href="index.html">Home</a>
               </li>
               <li>
-                <span>Apply Loan</span>
+                <span>Prequalify</span>
               </li>
             </ul>
           </div>
