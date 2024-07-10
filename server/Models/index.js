@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize');
 const config = require('../config/config')[process.env.NODE_ENV || 'development'];
 
-const sequelize = new Sequelize('OneFin', 'root', 'root', {
+const sequelize = new Sequelize('OneFin', 'root', 'Yeesou.33', {
   host: 'localhost',
   dialect: 'mysql', // replace 'mysql' with your dialect if it's different
 });
@@ -16,7 +16,7 @@ db.LoanPrequalify = require('./loanPrequalify')(sequelize,Sequelize)
 db.Loan = require('./Loan')(sequelize,Sequelize)
 
 
-
+  
 
 db.User.hasMany(db.LoanPrequalify, { foreignKey: 'userId' });
 db.LoanPrequalify.belongsTo(db.User, { foreignKey: 'userId' });
