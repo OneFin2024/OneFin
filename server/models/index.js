@@ -1,8 +1,8 @@
 const { Sequelize } = require('sequelize');
 const config = require('../config/config')[process.env.NODE_ENV || 'development'];
 
-const sequelize = new Sequelize('OneFin', 'root', 'Yeesou.33', {
-  host: 'localhost',
+const sequelize = new Sequelize(database=process.env.DB_NAME,username=process.env.DB_USER,password=process.env.MYSQL_ROOT_PASSWORD, {
+  host: process.env.DB_HOST,
   dialect: 'mysql', // replace 'mysql' with your dialect if it's different
 });
 

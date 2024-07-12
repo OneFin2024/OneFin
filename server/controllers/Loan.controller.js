@@ -8,7 +8,7 @@ module.exports = {
             res.status(200).send(loan)    
         } catch (error) {
             throw error    
-        }   
+        }
     },
 
 
