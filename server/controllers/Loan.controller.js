@@ -1,4 +1,4 @@
-const db=require('../Models/Loan');
+const db=require('../models/loan');
 
 module.exports = {
 

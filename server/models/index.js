@@ -11,9 +11,9 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 
-db.User = require('./User')(sequelize, Sequelize);
+db.User = require('./user')(sequelize, Sequelize);
 db.LoanPrequalify = require('./loanPrequalify')(sequelize,Sequelize)
-db.Loan = require('./Loan')(sequelize,Sequelize)
+db.Loan = require('./loan')(sequelize,Sequelize)
 
 
   
