@@ -23,7 +23,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "react-dev": "react-scripts start"
+    "react-dev": "react-scripts start",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "format": "prettier --write 'src/**/*.{ts,tsx}'"
   },
   "eslintConfig": {
     "extends": [

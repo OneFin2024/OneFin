@@ -1,4 +1,4 @@
-const db=require('../Models/Loan');
+const db=require('../models/loan');
 
 module.exports = {
 
@@ -8,7 +8,7 @@ module.exports = {
             res.status(200).send(loan)    
         } catch (error) {
             throw error    
-        }   
+        }
     },
 
 
