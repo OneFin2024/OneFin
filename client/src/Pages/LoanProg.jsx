@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 
+console.log("testtestttttt",localStorage.getItem('user'));
 function LoanProg() {
+  const navigate = useNavigate();
 
   const [state, setstate] = useState("BusinessLoanApplication");
 
   const switchView=(option)=>{
     setstate(option)
-}
+  }
+
 
   return (
     <>

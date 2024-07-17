@@ -1,8 +1,25 @@
 import React, { useState,useEffect} from 'react';
 import Select from 'react-select';
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
+
 
 function LoanApplication() {
+  const navigate = useNavigate();
+  const submitForm = () => {
+    
+    if(localStorage.getItem('user')){
+    
+    navigate('/LoanProg')
+    
+  }else{
+
+    navigate('/Login')
+
+  }
+  }
+
+
   const [formData, setFormData] = useState({
     loanAmount: '',
     monthlyIncome: '',
@@ -50,11 +67,11 @@ function LoanApplication() {
     { value: '5', label: '5 years' },
   ];
 
-  const maritalStatusOptions = [
-    { value: 'married', label: 'Married' },
-    { value: 'single', label: 'Single' },
-    { value: 'widowed', label: 'Widowed' },
-    { value: 'divorced', label: 'Divorced' },
+  const Creditrating = [
+    { value: 'Bad', label: 'Bad' },
+    { value: 'Fair', label: 'Fair' },
+    { value: 'Good', label: 'Good' },
+    { value: 'Excellent', label: 'Excellent' },
   ];
 
   const numberOfDependentsOptions = [
@@ -163,58 +180,13 @@ const handleSubmit = async (e) => {
         <div className="container">
           <form className="apply-loan__form" onSubmit={handleSubmit}>
             <div className="apply-loan__details">
-              <h2 className="apply-loan__details__title">Loan Details</h2>
-              <div className="apply-loan__form__row row">
-                <div className="col-md-6">
-                  <div className="apply-loan__form__control">
-                    <label htmlFor="loan-amount">Loan Amount*</label>
-                    <input
-                      type="text"
-                      id="loan-amount"
-                      name="loanAmount"
-                      placeholder="$25000.00"
-                      value={formData.loanAmount}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="apply-loan__form__control">
-                    <label htmlFor="monthly-income">Monthly Income*</label>
-                    <input
-                      type="text"
-                      id="monthly-income"
-                      name="monthlyIncome"
-                      placeholder="$1000.00"
-                      value={formData.monthlyIncome}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="apply-loan__form__control">
-                    <label>Purpose of Loan*</label>
-                    <Select
-                      options={loanPurposeOptions}
-                      onChange={(selectedOption) => handleSelectChange('loanPurpose', selectedOption)}
-                    />
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="apply-loan__form__control">
-                    <label>Loan Years*</label>
-                    <Select
-                      options={loanYearsOptions}
-                      onChange={(selectedOption) => handleSelectChange('loanYears', selectedOption)}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
+              <h2 className="apply-loan__details__title">Fill the form below to prequalify</h2>
+
+
+
+            
             <div className="apply-loan__details">
-              <h2 className="apply-loan__details__title">Personal Details</h2>
+              {/* <h2 className="apply-loan__details__title">Personal Details</h2> */}
               <div className="apply-loan__form__row row">
                 <div className="col-md-6">
                   <div className="apply-loan__form__control">
@@ -258,23 +230,16 @@ const handleSubmit = async (e) => {
                     />
                   </div>
                 </div>
+             
                 <div className="col-md-6">
                   <div className="apply-loan__form__control">
-                    <label>Marital Status*</label>
-                    <Select
-                      options={maritalStatusOptions}
-                      onChange={(selectedOption) => handleSelectChange('maritalStatus', selectedOption)}
-                    />
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="apply-loan__form__control">
-                    <label htmlFor="datepicker">Birth Date*</label>
+                    <label htmlFor="mobile-number">Business Name</label>
                     <input
-                      type="date"
-                      id="datepicker"
-                      name="birthDate"
-                      value={formData.birthDate}
+                      type="text"
+                      id="Business-Name"
+                      name="BusinessName"
+                      placeholder="Business Name"
+                      value={formData.mobileNumber}
                       onChange={handleChange}
                       required
                     />
@@ -282,87 +247,94 @@ const handleSubmit = async (e) => {
                 </div>
                 <div className="col-md-6">
                   <div className="apply-loan__form__control">
-                    <label>Number Of Dependents*</label>
-                    <Select
-                      options={numberOfDependentsOptions}
-                      onChange={(selectedOption) => handleSelectChange('numberOfDependents', selectedOption)}
+                    <label htmlFor="mobile-number">Industry</label>
+                    <input
+                      type="text"
+                      id="Industry"
+                      name="Industry"
+                      placeholder="Industry"
+                      value={formData.mobileNumber}
+                      onChange={handleChange}
+                      required
                     />
                   </div>
                 </div>
+                <div className="col-md-6">
+                  <div className="apply-loan__form__control">
+                    <label htmlFor="mobile-number">Initiation Year - Min (2 years in business) *
+                    </label>
+                    <input
+                      type="text"
+                      id="Industry"
+                      name="Industry"
+                      placeholder="Industry"
+                      value={formData.mobileNumber}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="col-md-6">
+                  <div className="apply-loan__form__control">
+                    <label htmlFor="mobile-number">State Tax ID
+                    </label>
+                    <input
+                      type="text"
+                      id="tax"
+                      name="tax"
+                      placeholder="State Tax ID"
+                      value={formData.mobileNumber}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                </div>
+
+
+
+                <div className="col-md-6">
+                  <div className="apply-loan__form__control">
+                  <label htmlFor="mobile-number">Credit Score
+                    </label>
+                    <input
+                      type="text"
+                      id="tax"
+                      name="tax"
+                      placeholder="Credit Score"
+                      value={formData.mobileNumber}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
               </div>
-            </div>
-            <div className="apply-loan__details">
-              <h2 className="apply-loan__details__title">Address Details</h2>
-              <div className="apply-loan__form__row row">
+              
+                
+
+
                 <div className="col-md-6">
                   <div className="apply-loan__form__control">
-                    <label htmlFor="house-info">House No/Name*</label>
-                    <input
-                      type="text"
-                      id="house-info"
-                      name="houseInfo"
-                      placeholder="House No/Name"
-                      value={formData.houseInfo}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="apply-loan__form__control">
-                    <label htmlFor="street">Street*</label>
-                    <input
-                      type="text"
-                      id="street"
-                      name="street"
-                      placeholder="Street"
-                      value={formData.street}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="apply-loan__form__control">
-                    <label htmlFor="city">City*</label>
-                    <input
-                      type="text"
-                      id="city"
-                      name="city"
-                      placeholder="City Name"
-                      value={formData.city}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="apply-loan__form__control">
-                    <label>State*</label>
+                    <label>Credit Score
+                    *</label>
                     <Select
-                      options={stateOptions}
-                      onChange={(selectedOption) => handleSelectChange('state', selectedOption)}
+                      options={Creditrating}
+                      onChange={(selectedOption) => handleSelectChange('Creditrating', selectedOption)}
                     />
                   </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="apply-loan__form__control">
-                    <label htmlFor="zip">ZIP/Post Code*</label>
-                    <input
-                      type="text"
-                      id="zip"
-                      name="zip"
-                      placeholder="ZIP/Post Code"
-                      value={formData.zip}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                </div>
               </div>
+
+
+                </div>
+             
+               
+              
             </div>
-            <button type="submit" className="apply-loan__form__btn easilon-btn">
-              <span>submit now</span>
+            </div>
+          
+
+
+
+            <button type="submit" onClick={()=>{submitForm()}} className="apply-loan__form__btn easilon-btn">
+              <span  >submit now</span>
               <span className="easilon-btn__icon">
                 <i className="icon-double-right-arrow" />
               </span>

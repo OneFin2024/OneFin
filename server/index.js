@@ -1,8 +1,24 @@
 const express = require('express');
-const db = require('./models');
+const db = require('./Models');
 const authRoutes = require('./routes/authRoutes');
-const LoanRoutes = require('./routes/Loan.routes');
+
 const middleware =  require('./middlewares/authMiddleware')
+
+
+const applicantInformationRoutes = require('./routes/LoanProgrameRoutes/applicantInformation.routes');
+const businessDetailsRoutes = require('./routes/LoanProgrameRoutes/businessDetails.Routes');
+const businessFinancialInformationRoutes = require('./routes/LoanProgrameRoutes/businessFinancialInformation.Routes');
+const contactInformationRoutes = require('./routes/LoanProgrameRoutes/contactInformation.Routes');
+const generalInfoRoutes = require('./routes/LoanProgrameRoutes/generalInfo.Routes');
+const loanApplicationRoutes = require('./routes/LoanProgrameRoutes/loanApplication.Routes');
+const requestDetailsRoutes = require('./routes/LoanProgrameRoutes/requestDetails.Routes');
+
+
+
+
+
+
+
 require('dotenv').config();
 const cors = require('cors');
 const app = express();
@@ -13,15 +29,32 @@ const corsOptions = {
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
 };  
 
+
+
+
+
+
+
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use((err, req, res, next) => {
   console.error(err.stack); // Log the error stack trace
   res.status(500).json({ message: 'Internal Server Error' }); // Respond with a generic error message
 });
+
+// Define routes
 // app.use(middleware)
 app.use('/api/auth', authRoutes);
-app.use('/api/Loan', LoanRoutes);
+app.use("/api/applicantInformation", applicantInformationRoutes);
+app.use('/businessDetails', businessDetailsRoutes);
+app.use('/businessFinancialInformation', businessFinancialInformationRoutes);
+app.use('/contactInformation', contactInformationRoutes);
+app.use('/generalInfo', generalInfoRoutes);
+app.use('/loanApplication', loanApplicationRoutes);
+app.use('/requestDetails', requestDetailsRoutes);
+
+
+
 app.post('/loan-application', async (req, res) => {
   try {
     const loanApplication = await db.LoanPrequalify.create(req.body);
@@ -36,8 +69,8 @@ db.sequelize.authenticate()
     return db.sequelize.sync();
   })
   .then(() => {
-    app.listen(9987, () => {
-      console.log('Server is running on port 9987');
+    app.listen(3001, () => {
+      console.log('Server is running on port 3001');
     });
   })
   .catch(error => {
@@ -52,8 +85,8 @@ db.sequelize.authenticate()
   // })
   // .then(() => {
   //   console.log('Connection has been established successfully.');
-  //   app.listen(9987, () => {
-  //     console.log('Server is running on port 9987');
+  //   app.listen(3000, () => {
+  //     console.log('Server is running on port 3001');
   //   });
   // })
   // .catch(error => {

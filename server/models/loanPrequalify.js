@@ -1,5 +1,7 @@
+const { LoanPrequalify } = require(".");
+
 module.exports = (sequelize, DataTypes) => {
-  const LoanApplication = sequelize.define('LoanApplication', {
+  const LoanPrequalify = sequelize.define('LoanPrequalify', {
     loanAmount: {
       type: DataTypes.FLOAT,
       allowNull: false,
@@ -66,5 +68,5 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
-  return LoanApplication;
+  return LoanPrequalify;
 };
