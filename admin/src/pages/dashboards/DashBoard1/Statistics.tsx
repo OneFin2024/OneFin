@@ -19,7 +19,7 @@ const Statistics = () => {
             <Col xl={3} md={6}>
                 <StatisticsWidget2
                     variant="success"
-                    title="Sales Analytics"
+                    title="Loans Analytics"
                     trendValue="32%"
                     trendIcon="mdi mdi-trending-up"
                     stats={8451}
@@ -39,7 +39,7 @@ const Statistics = () => {
             <Col xl={3} md={6}>
                 <StatisticsWidget2
                     variant="pink"
-                    title="Daily Sales"
+                    title="Daily Loans"
                     trendValue="32%"
                     trendIcon="mdi mdi-trending-up"
                     stats={158}
