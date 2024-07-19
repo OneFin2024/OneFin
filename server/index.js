@@ -46,12 +46,12 @@ app.use((err, req, res, next) => {
 // app.use(middleware)
 app.use('/api/auth', authRoutes);
 app.use("/api/applicantInformation", applicantInformationRoutes);
-app.use('/businessDetails', businessDetailsRoutes);
-app.use('/businessFinancialInformation', businessFinancialInformationRoutes);
-app.use('/contactInformation', contactInformationRoutes);
-app.use('/generalInfo', generalInfoRoutes);
-app.use('/loanApplication', loanApplicationRoutes);
-app.use('/requestDetails', requestDetailsRoutes);
+app.use('/api/businessDetails', businessDetailsRoutes);
+app.use('/api/businessFinancialInformation', businessFinancialInformationRoutes);
+app.use('/api/contactInformation', contactInformationRoutes);
+app.use('/api/generalInfo', generalInfoRoutes);
+app.use('/api/loanApplication', loanApplicationRoutes);
+app.use('/api/requestDetails', requestDetailsRoutes);
 
 
 

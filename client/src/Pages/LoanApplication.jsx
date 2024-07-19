@@ -247,12 +247,68 @@ const handleSubmit = async (e) => {
                 </div>
                 <div className="col-md-6">
                   <div className="apply-loan__form__control">
+                    <label htmlFor="mobile-number"> Street Adresse</label>
+                    <input
+                      type="text"
+                      id="Business-Name"
+                      name="BusinessName"
+                      placeholder="Business Name"
+                      value={formData.mobileNumber}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="col-md-6">
+                  <div className="apply-loan__form__control">
+                    <label htmlFor="mobile-number">State</label>
+                    <input
+                      type="text"
+                      id="Business-Name"
+                      name="BusinessName"
+                      placeholder="State"
+                      value={formData.mobileNumber}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="col-md-6">
+                  <div className="apply-loan__form__control">
+                    <label htmlFor="mobile-number">city</label>
+                    <input
+                      type="text"
+                      id="Business-Name"
+                      name="BusinessName"
+                      placeholder="city "
+                      value={formData.mobileNumber}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="col-md-6">
+                  <div className="apply-loan__form__control">
                     <label htmlFor="mobile-number">Industry</label>
                     <input
                       type="text"
                       id="Industry"
                       name="Industry"
                       placeholder="Industry"
+                      value={formData.mobileNumber}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="col-md-6">
+                  <div className="apply-loan__form__control">
+                    <label htmlFor="mobile-number">Zip Code</label>
+                    <input
+                      type="text"
+                      id="Business-Name"
+                      name="BusinessName"
+                      placeholder="State"
                       value={formData.mobileNumber}
                       onChange={handleChange}
                       required
@@ -274,21 +330,7 @@ const handleSubmit = async (e) => {
                     />
                   </div>
                 </div>
-                <div className="col-md-6">
-                  <div className="apply-loan__form__control">
-                    <label htmlFor="mobile-number">State Tax ID
-                    </label>
-                    <input
-                      type="text"
-                      id="tax"
-                      name="tax"
-                      placeholder="State Tax ID"
-                      value={formData.mobileNumber}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                </div>
+               
 
 
 
@@ -313,7 +355,7 @@ const handleSubmit = async (e) => {
 
                 <div className="col-md-6">
                   <div className="apply-loan__form__control">
-                    <label>Credit Score
+                    <label>Credit Rating
                     *</label>
                     <Select
                       options={Creditrating}

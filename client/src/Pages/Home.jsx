@@ -21,23 +21,6 @@ export const Home = ()=> {
   <Slider/>
 
 
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
     <section className="about-one section-space" id="about">
       <div className="about-one__bg" style={{backgroundImage: 'url(assets/images/shapes/about-bg-1-1.png)'}} />{/* /.about-one__bg */}
       <div className="container">

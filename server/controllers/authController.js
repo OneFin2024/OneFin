@@ -40,4 +40,15 @@ exports.login = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
-};
+
+
+  
+}
+exports.getalluser = async (req, res)=>{
+  try {
+    const applicantInformation = await db.ApplicantInformation.findAll({});
+    res.json(applicantInformation);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+  };
