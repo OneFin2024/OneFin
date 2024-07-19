@@ -44,7 +44,7 @@ const SalesChart = () => {
                 useSeriesColors: true,
             },
         },
-        labels: ['In-Store Sales', 'Download Sales', 'Mail-Order Sales'],
+        labels: ['In-Store Loans', 'Download Loans', 'Mail-Order Loans'],
         tooltip: {
             enabled: false,
         },

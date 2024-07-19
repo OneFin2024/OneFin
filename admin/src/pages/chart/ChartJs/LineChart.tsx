@@ -19,7 +19,7 @@ const LineChart = () => {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Auguest', 'September  '],
         datasets: [
             {
-                label: 'Sales Analytics',
+                label: 'Loans Analytics',
                 data: [65, 59, 80, 81, 56, 55, 40, 35, 30],
                 fill: false,
                 borderColor: '#10c469',
