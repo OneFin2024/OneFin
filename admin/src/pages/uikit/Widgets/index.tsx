@@ -55,7 +55,7 @@ const Widgets = () => {
                 </Col>
                 <Col xl={3} md={6}>
                     <StatisticsWidget1
-                        title="Statistics"
+                        title="Loans Rejected"
                         color={'#ffbd4a'}
                         data={80}
                         stats={4569}
@@ -64,7 +64,7 @@ const Widgets = () => {
                 </Col>
                 <Col xl={3} md={6}>
                     <StatisticsWidget1
-                        title="Total Revenue"
+                        title="Total Loans"
                         color={'#35b8e0'}
                         data={77}
                         stats={8545}
@@ -86,7 +86,7 @@ const Widgets = () => {
                 <Col xl={3} md={6}>
                     <StatisticsWidget2
                         variant="pink"
-                        title="Daily Loans"
+                        title="Loans in Process"
                         trendValue="32%"
                         trendIcon="mdi mdi-trending-up"
                         stats={158}
@@ -97,7 +97,7 @@ const Widgets = () => {
                 <Col xl={3} md={6}>
                     <StatisticsWidget2
                         variant="success"
-                        title="Loans Analytics"
+                        title="Loans Accepted"
                         trendValue="32%"
                         trendIcon="mdi mdi-trending-up"
                         stats={8451}
@@ -108,7 +108,7 @@ const Widgets = () => {
                 <Col xl={3} md={6}>
                     <StatisticsWidget2
                         variant="primary"
-                        title="Loans Analytics"
+                        title="Loans Accepted"
                         trendValue="32%"
                         trendIcon="mdi mdi-trending-up"
                         stats={7540}
