@@ -44,7 +44,7 @@ const SalesChart = () => {
                 useSeriesColors: true,
             },
         },
-        labels: ['In-Store Loans', 'Download Loans', 'Mail-Order Loans'],
+        labels: ['Rejected Loans', 'Accepted Loans'],
         tooltip: {
             enabled: false,
         },
@@ -67,7 +67,7 @@ const SalesChart = () => {
                     </Dropdown.Menu>
                 </Dropdown>
 
-                <h4 className="header-title mt-0">Daily Sales</h4>
+                <h4 className="header-title mt-0">Loans Charts</h4>
 
                 <div dir="ltr">
                     <Chart

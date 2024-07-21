@@ -9,17 +9,17 @@ const Statistics = () => {
         <Row>
             <Col xl={3} md={6}>
                 <StatisticsWidget1
-                    title="Total Revenue"
+                    title="Total Loans"
                     data={58}
                     stats={256}
-                    color={'#f05050'}
+                    color={'#0FC56A'}
                     subTitle="Revenue today"
                 />
             </Col>
             <Col xl={3} md={6}>
                 <StatisticsWidget2
                     variant="success"
-                    title="Loans Analytics"
+                    title="Loans Accepted"
                     trendValue="32%"
                     trendIcon="mdi mdi-trending-up"
                     stats={8451}
@@ -29,8 +29,8 @@ const Statistics = () => {
             </Col>
             <Col xl={3} md={6}>
                 <StatisticsWidget1
-                    title="Statistics"
-                    color={'#ffbd4a'}
+                    title="Loans Rejected"
+                    color={'#FF5B5B'}
                     data={80}
                     stats={4569}
                     subTitle="Revenue today"
@@ -39,7 +39,7 @@ const Statistics = () => {
             <Col xl={3} md={6}>
                 <StatisticsWidget2
                     variant="pink"
-                    title="Daily Loans"
+                    title="Loans in Process"
                     trendValue="32%"
                     trendIcon="mdi mdi-trending-up"
                     stats={158}

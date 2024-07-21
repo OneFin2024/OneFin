@@ -13,7 +13,7 @@ const statisticsWidgets: Statistic[] = [
     },
     {
         stats: 5894,
-        title: 'Total Revenue',
+        title: 'Total Loans',
         variant: 'pink',
     },
     {
