@@ -2,12 +2,26 @@ import React, { useState,useEffect} from 'react';
 import Select from 'react-select';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
+import { fetchPrequalify } from '../reducers/prequalifySlice.js'; 
 
 
 function LoanApplication() {
   const navigate = useNavigate();
+  const dispatch=useDispatch()
+
+  // const { Data } =useSelector (state => state.prequalify)
+  // console.log("this is the data user in doc profile",DataPrequalify);
+
+  // const { DataPrequalify } =useSelector (state => state.prequalify)
+
+
+
+
+
   const submitForm = () => {
-    
+     
     if(localStorage.getItem('user')){
     
     navigate('/LoanProg')
@@ -20,25 +34,26 @@ function LoanApplication() {
   }
 
 
-  const [formData, setFormData] = useState({
-    loanAmount: '',
-    monthlyIncome: '',
-    loanPurpose: '',
-    loanYears: '',
+  const [formData, setFormData] = useState({  
+   
     fullName: '',
     email: '',
     mobileNumber: '',
+    BusinessName:'',
+    StreetAdresse:'',
+    ZipCode:'',
     maritalStatus: '',
-    birthDate: '',
-    numberOfDependents: '',
-    houseInfo: '',
     street: '',
-    city: '',
+    Industry: '',
     state: '',
-    zip: '',
-    country: '',
+    InitiationYear: '',
+    CreditScore: '',
+    CreditRating: '',
   });
   useEffect(() => {
+
+    dispatch(fetchPrequalify())
+
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
       const user = JSON.parse(storedUser);
@@ -50,6 +65,7 @@ function LoanApplication() {
       }));
     }
   }, []);
+
   const loanPurposeOptions = [
     { value: 'home', label: 'Home Loan' },
     { value: 'bike', label: 'Bike Loan' },
@@ -280,13 +296,13 @@ const handleSubmit = async (e) => {
              
                 <div className="col-md-6">
                   <div className="apply-loan__form__control">
-                    <label htmlFor="mobile-number">Business Name</label>
+                    <label htmlFor="Business-Name">Business Name</label>
                     <input
                       type="text"
                       id="Business-Name"
                       name="BusinessName"
                       placeholder="Business Name"
-                      value={formData.mobileNumber}
+                      value={formData.BusinessName}
                       onChange={handleChange}
                       required
                     />
@@ -294,13 +310,13 @@ const handleSubmit = async (e) => {
                 </div>
                 <div className="col-md-6">
                   <div className="apply-loan__form__control">
-                    <label htmlFor="mobile-number"> Street Adresse</label>
+                    <label htmlFor="StreetAdresse"> Street Adresse</label>
                     <input
                       type="text"
                       id="Street-Adresse"
                       name="StreetAdresse"
                       placeholder="Street Adresse"
-                      value={formData.mobileNumber}
+                      value={formData.StreetAdresse}
                       onChange={handleChange}
                       required
                     />
@@ -308,65 +324,58 @@ const handleSubmit = async (e) => {
                 </div>
                 <div className="col-md-6">
                   <div className="apply-loan__form__control">
-                    <label htmlFor="mobile-number">State</label>
+                    <label htmlFor="state">State</label>
                     <Select
                       options={stateOptions}
                       onChange={(selectedOption) => handleSelectChange('State', selectedOption)}
                     />
                   </div>
                 </div>
+                
+
                 <div className="col-md-6">
                   <div className="apply-loan__form__control">
-                    <label htmlFor="mobile-number">city</label>
-                    <input
-                      type="text"
-                      id="Business-Name"
-                      name="BusinessName"
-                      placeholder="city "
-                      value={formData.mobileNumber}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="apply-loan__form__control">
-                    <label htmlFor="mobile-number">Industry</label>
-                    <input
-                      type="text"
-                      id="Industry"
-                      name="Industry"
-                      placeholder="Industry"
-                      value={formData.mobileNumber}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="apply-loan__form__control">
-                    <label htmlFor="mobile-number">Zip Code</label>
+                    <label htmlFor="ZipCode">Zip Code</label>
                     <input
                       type="text"
                       id="Zip-Code"
                       name="ZipCode"
                       placeholder="Zip Code"
-                      value={formData.mobileNumber}
+                      value={formData.ZipCode}
                       onChange={handleChange}
                       required
                     />
                   </div>
                 </div>
+
+
+
+
                 <div className="col-md-6">
                   <div className="apply-loan__form__control">
-                    <label htmlFor="mobile-number">Initiation Year *
-                    </label>
+                    <label htmlFor="Industry">Industry</label>
                     <input
                       type="text"
                       id="Industry"
                       name="Industry"
+                      placeholder="Industry"
+                      value={formData.Industry}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                </div>
+                
+                <div className="col-md-6">
+                  <div className="apply-loan__form__control">
+                    <label htmlFor="InitiationYear">Initiation Year *
+                    </label>
+                    <input
+                      type="text"
+                      id="InitiationYear"
+                      name="InitiationYear"
                       placeholder="Min (2 years in business)"
-                      value={formData.mobileNumber}
+                      value={formData.InitiationYear}
                       onChange={handleChange}
                       required
                     />
@@ -393,14 +402,14 @@ const handleSubmit = async (e) => {
 
               <div className="col-md-6">
                   <div className="apply-loan__form__control">
-                  <label htmlFor="mobile-number">Credit Score
+                  <label htmlFor="CreditScore">Credit Score
                     </label>
                     <input
                       type="text"
-                      id="tax"
-                      name="tax"
+                      id="CreditScore"
+                      name="CreditScore"
                       placeholder="Credit Score"
-                      value={formData.mobileNumber}
+                      value={formData.CreditScore}
                       onChange={handleChange}
                       required
                     />

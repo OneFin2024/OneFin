@@ -1,24 +1,7 @@
-const { LoanPrequalify } = require(".");
 
 module.exports = (sequelize, DataTypes) => {
   const LoanPrequalify = sequelize.define('LoanPrequalify', {
-    loanAmount: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
-    },
-    monthlyIncome: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
-    },
-    loanPurpose: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    loanYears: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    fullName: {
+  fullName: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -27,30 +10,22 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     mobileNumber: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    maritalStatus: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    birthDate: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
-    numberOfDependents: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    houseInfo: {
+    BusinessName: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    street: {
+    StreetAdresse: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    city: {
+    ZipCode: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    Industry: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -58,14 +33,21 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    zip: {
+    InitiationYear: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    country: {
+    CreditRating: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    CreditScore: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+  }, {
+    tableName: 'LoanPrequalify',
+    timestamps: false
   });
 
   return LoanPrequalify;

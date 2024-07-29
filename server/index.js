@@ -12,6 +12,7 @@ const contactInformationRoutes = require('./routes/LoanProgrameRoutes/contactInf
 const generalInfoRoutes = require('./routes/LoanProgrameRoutes/generalInfo.Routes');
 const loanApplicationRoutes = require('./routes/LoanProgrameRoutes/loanApplication.Routes');
 const requestDetailsRoutes = require('./routes/LoanProgrameRoutes/requestDetails.Routes');
+const PrequalifyRoutes = require('./routes/Prequalify.Routes');
 
 
 
@@ -52,6 +53,7 @@ app.use('/api/businessFinancialInformation', businessFinancialInformationRoutes)
 app.use('/api/contactInformation', contactInformationRoutes);
 app.use('/api/generalInfo', generalInfoRoutes);
 app.use('/api/requestDetails', requestDetailsRoutes);
+app.use('/api/Prequalify', PrequalifyRoutes);
 
 
 
