@@ -1,60 +1,51 @@
-import React, { useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-
+import { useDispatch } from "react-redux";
 import { fetchPrequalify } from '../reducers/prequalifySlice.js'; 
 import Modal from 'react-bootstrap/Modal'; 
 import Button from 'react-bootstrap/Button'; 
-  
+
 function LoanApplication() {
   const navigate = useNavigate();
-  const dispatch=useDispatch()
+  const dispatch = useDispatch();
   const [show, setShow] = useState(false);
+  const [lowCreditScore, setLowCreditScore] = useState(false);
+  const [shortBusinessDuration, setShortBusinessDuration] = useState(false);
 
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    setShow(false);
+    setLowCreditScore(false);
+    setShortBusinessDuration(false);
+
+  };
   const handleShow = () => setShow(true);
-  // const { DataPrequalify } =useSelector (state => state.prequalify)
-  // console.log("this is the data user in doc profile",DataPrequalify);
-
-  // const { DataPrequalify } =useSelector (state => state.prequalify)
-
-
-
-
 
   const submitForm = () => {
-     
-    if(localStorage.getItem('user')){
-    
-    navigate('/LoanProg')
-    
-  }else{
-
-    navigate('/Login')
-
-  }
-  }
-
+    if (localStorage.getItem('user')) {
+      navigate('/LoanProg');
+    } else {
+      navigate('/Login');
+    }
+  };
 
   const [formData, setFormData] = useState({  
-   
     fullName: 'r',
     email: 'r',
     mobileNumber: '9',
-    BusinessName:'',
-    StreetAdresse:'',
-    ZipCode:'',
+    BusinessName: '',
+    StreetAdresse: '',
+    ZipCode: '',
     Industry: '',
     InitiationYear: '',
     CreditScore: '',
     CreditRating: '',
     state: 'x'
   });
-  useEffect(() => {
 
-    dispatch(fetchPrequalify())
+  useEffect(() => {
+    dispatch(fetchPrequalify());
 
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
@@ -66,7 +57,7 @@ function LoanApplication() {
         mobileNumber: user.phone,
       }));
     }
-  }, []);
+  }, [dispatch]);
 
   const loanPurposeOptions = [
     { value: 'home', label: 'Home Loan' },
@@ -92,14 +83,6 @@ function LoanApplication() {
     { value: 'Excellent', label: 'Excellent' },
   ];
 
-  const numberOfDependentsOptions = [
-    { value: '1', label: '1 dependent' },
-    { value: '2', label: '2 dependents' },
-    { value: '3', label: '3 dependents' },
-    { value: '4', label: '4 dependents' },
-    { value: '5', label: '5 dependents' },
-  ];
-
   const stateOptions = [
     { value: 'Alabama', label: 'Alabama' },
     { value: 'Alaska', label: 'Alaska' },
@@ -108,14 +91,13 @@ function LoanApplication() {
     { value: 'California', label: 'California' },
     { value: 'Colorado', label: 'Colorado' },
     { value: 'Connecticut', label: 'Connecticut' },
-
     { value: 'Delaware', label: 'Delaware' },
     { value: 'District Of Columbia', label: 'District Of Columbia' },
     { value: 'Florida', label: 'Florida' },
     { value: 'Georgia', label: 'Georgia' },
     { value: 'Hawaii', label: 'Hawaii' },
     { value: 'Idaho', label: 'Idaho' },
-    { value: 'Illinois', label: 'Illinois ' },
+    { value: 'Illinois', label: 'Illinois' },
     { value: 'Indiana', label: 'Indiana' },
     { value: 'Iowa', label: 'Iowa' },
     { value: 'Kansas', label: 'Kansas' },
@@ -123,7 +105,6 @@ function LoanApplication() {
     { value: 'Louisiana', label: 'Louisiana' },
     { value: 'Maine', label: 'Maine' },
     { value: 'Maryland', label: 'Maryland' },
-    
     { value: 'Massachusetts', label: 'Massachusetts' },
     { value: 'Michigan', label: 'Michigan' },
     { value: 'Minnesota', label: 'Minnesota' },
@@ -138,7 +119,6 @@ function LoanApplication() {
     { value: 'New York', label: 'New York' },
     { value: 'North Carolina', label: 'North Carolina' },
     { value: 'North Dakota', label: 'North Dakota' },
-    
     { value: 'Ohio', label: 'Ohio' },
     { value: 'Oklahoma', label: 'Oklahoma' },
     { value: 'Oregon', label: 'Oregon' },
@@ -157,16 +137,6 @@ function LoanApplication() {
     { value: 'Wyoming', label: 'Wyoming' },
   ];
 
-  const countryOptions = [
-    { value: 'Bangladesh', label: 'Bangladesh' },
-    { value: 'Afghanistan', label: 'Afghanistan' },
-    { value: 'Russia', label: 'Russia' },
-    { value: 'Indonesia', label: 'Indonesia' },
-    { value: 'Jordan', label: 'Jordan' },
-    { value: 'United Kingdom', label: 'United Kingdom' },
-    { value: 'United States of America', label: 'United States of America' },
-  ];
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -182,32 +152,37 @@ function LoanApplication() {
     });
   };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  const storedUser = localStorage.getItem('user');
-  const user = storedUser ? JSON.parse(storedUser) : null;
-  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const storedUser = localStorage.getItem('user');
+    const user = storedUser ? JSON.parse(storedUser) : null;
 
+    // Check business duration
+    const currentYear = new Date().getFullYear();
+    const initiationYear = parseInt(formData.InitiationYear);
+    if (isNaN(initiationYear) || (currentYear - initiationYear) < 2) {
+      setShortBusinessDuration(true);
+      return;
+    }
+    if (formData.CreditScore < 600) {
+      setLowCreditScore(true);
+      return;
+    }
 
-  // const token = user.token; // Assuming your JWT token is stored in user.token
-  // const header = {
-  //   'Authorization': `Bearer ${token}`
-  // };
+    const loanApplicationData = {
+      ...formData,
+      userId: user.user.id,
+    };
 
-  const loanApplicationData = {
-    ...formData,
-    userId: user.user.id,
+    try {
+      console.log(formData);
+      const response = await axios.post('http://localhost:3001/loan-application', loanApplicationData);
+      console.log('Form submitted successfully:', response.data);
+      handleShow();
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
   };
-
-  try {
-    console.log(formData);
-    const response = await axios.post('http://localhost:3001/loan-application', loanApplicationData);
-    console.log('Form submitted successfully:', response.data);
-  } catch (error) {
-    console.error('Error submitting form:', error);
-  }
-};
-
 
   return (
     <div className="page-wrapper">
@@ -244,12 +219,6 @@ const handleSubmit = async (e) => {
           <form className="apply-loan__form" onSubmit={handleSubmit}>
             <div className="apply-loan__details">
               <h2 className="apply-loan__details__title">Fill the form below to prequalify</h2>
-
-
-
-            
-            <div className="apply-loan__details">
-              {/* <h2 className="apply-loan__details__title">Personal Details</h2> */}
               <div className="apply-loan__form__row row">
                 <div className="col-md-6">
                   <div className="apply-loan__form__control">
@@ -293,7 +262,7 @@ const handleSubmit = async (e) => {
                     />
                   </div>
                 </div>
-             
+
                 <div className="col-md-6">
                   <div className="apply-loan__form__control">
                     <label htmlFor="Business-Name">Business Name</label>
@@ -310,12 +279,12 @@ const handleSubmit = async (e) => {
                 </div>
                 <div className="col-md-6">
                   <div className="apply-loan__form__control">
-                    <label htmlFor="StreetAdresse"> Street Adresse</label>
+                    <label htmlFor="StreetAdresse">Street Address</label>
                     <input
                       type="text"
                       id="Street-Adresse"
                       name="StreetAdresse"
-                      placeholder="Street Adresse"
+                      placeholder="Street Address"
                       value={formData.StreetAdresse}
                       onChange={handleChange}
                       required
@@ -331,7 +300,6 @@ const handleSubmit = async (e) => {
                     />
                   </div>
                 </div>
-                
 
                 <div className="col-md-6">
                   <div className="apply-loan__form__control">
@@ -347,9 +315,6 @@ const handleSubmit = async (e) => {
                     />
                   </div>
                 </div>
-
-
-
 
                 <div className="col-md-6">
                   <div className="apply-loan__form__control">
@@ -368,8 +333,7 @@ const handleSubmit = async (e) => {
                 
                 <div className="col-md-6">
                   <div className="apply-loan__form__control">
-                    <label htmlFor="InitiationYear">Initiation Year *
-                    </label>
+                    <label htmlFor="InitiationYear">Initiation Year *</label>
                     <input
                       type="text"
                       id="InitiationYear"
@@ -381,31 +345,21 @@ const handleSubmit = async (e) => {
                     />
                   </div>
                 </div>
-               
-
-
-
-              
-                
-
 
                 <div className="col-md-6">
                   <div className="apply-loan__form__control">
-                    <label>Credit Rating
-                    *</label>
+                    <label>Credit Rating*</label>
                     <Select
                       options={Creditrating}
-                      onChange={(selectedOption) => handleSelectChange('Creditrating', selectedOption)}
+                      onChange={(selectedOption) => handleSelectChange('CreditRating', selectedOption)}
                     />
                   </div>
-              </div>
+                </div>
 
-              <div className="col-md-6">
+                <div className="col-md-6">
                   <div className="apply-loan__form__control">
-                  <label htmlFor="CreditScore">Credit Score
-                    </label>
+                    <label htmlFor="CreditScore">Credit Score</label>
                     <input
-                  
                       type="text"
                       id="CreditScore"
                       name="CreditScore"
@@ -415,53 +369,60 @@ const handleSubmit = async (e) => {
                       required
                     />
                   </div>
-              </div>
-              
-
-
                 </div>
-             
-               
-              
+              </div>
+              <button
+                style={{ "zIndex": 0 }}
+                type="submit"
+                onClick={() => handleShow()}
+                className="apply-loan__form__btn easilon-btn"
+              >
+                <span>Submit Now</span>
+                <span className="easilon-btn__icon">
+                  <i className="icon-double-right-arrow" />
+                </span>
+              </button>
             </div>
-            </div>
-          
-
-            {/* */}
-
-            <button  style={{"zIndex":0}} type="submit"
-                onClick={()=>{
-                handleShow()
-                  
-                }} 
-               className="apply-loan__form__btn easilon-btn">
-              <span  >submit now</span>
-              <span className="easilon-btn__icon">
-                <i className="icon-double-right-arrow" />
-              </span>
-            </button>            
           </form>
 
-       
-
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Prequalify success</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>You can now Create account with us </Modal.Body>
-        <Modal.Footer>
-        
-          <button className="apply-loan__form__btn easilon-btn" 
-          onClick={()=>{
-            handleClose()
-            submitForm()
-          }
-
-          }> 
-            Save Changes
-          </button>
-        </Modal.Footer>
-      </Modal>
+          {/* Modal for low credit score */}
+          <Modal show={lowCreditScore} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>Credit Score Too Low</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>Your credit score is too low to proceed with the application.</Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleClose}>
+                Close
+              </Button>
+            </Modal.Footer>
+          </Modal>
+          <Modal show={shortBusinessDuration} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>Business Duration Too Short</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>Your business needs to be established for at least 2 years to qualify for this loan.</Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleClose}>
+                Close
+              </Button>
+            </Modal.Footer>
+          </Modal>
+          {/* Modal for successful submission */}
+          <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>Prequalify Success</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>You can now create an account with us.</Modal.Body>
+            <Modal.Footer>
+              <Button variant="primary" onClick={() => {
+                handleClose();
+                submitForm();
+              }}>
+                Save Changes
+              </Button>
+            </Modal.Footer>
+          </Modal>
         </div>
       </section>
     </div>
