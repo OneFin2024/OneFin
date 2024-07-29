@@ -1,5 +1,5 @@
 // types
-import { Message, ProjectDetail } from './types';
+import { Message, ProjectDetail,Application } from './types';
 
 // images
 import avatar1 from '../../../assets/images/users/user-1.jpg';
@@ -103,4 +103,26 @@ const projectDetails: ProjectDetail[] = [
     },
 ];
 
-export { messages, projectDetails };
+const applications: Application[] = [
+    {
+        id: 1,
+        status: 'In Progress',
+        processor: 'Processor A',
+        requiredDocuments: false,
+    },
+    {
+        id: 2,
+        status: 'Need Documents',
+        processor: 'Processor B',
+        requiredDocuments: true,
+    },
+    {
+        id: 3,
+        status: 'Approved',
+        processor: 'Processor A',
+        requiredDocuments: false,
+    },
+    // ... more application data
+];
+
+export { messages, projectDetails, applications };
