@@ -34,7 +34,7 @@ function MainSliderOne() {
 
   return (
     <section className="main-slider-one" id="home">
-      <div className="main-slider-one__carousel easilon-owl__carousel owl-carousel">
+      <div className="main-slider-one_carousel easilon-owl_carousel owl-carousel">
         <div className="item">
           <div className="main-slider-one__item">
             <div className="main-slider-one__bg" style={{ backgroundImage: 'url(assets/images/backgrounds/main-slider-bg-1-1.jpg)' }}></div>
@@ -43,28 +43,28 @@ function MainSliderOne() {
                 <div className="col-lg-7">
                   <div className="main-slider-one__content">
                     <div className="main-slider-one__top">
-                      <div className="main-slider-one__top__inner">
+                      <div className="main-slider-one_top_inner">
                         <div className="main-slider-one__sub-title-shape">
-                          <div className="main-slider-one__sub-title-shape__one"></div>
-                          <div className="main-slider-one__sub-title-shape__two"></div>
+                          <div className="main-slider-one_sub-title-shape_one"></div>
+                          <div className="main-slider-one_sub-title-shape_two"></div>
                         </div>
                         <h5 className="main-slider-one__sub-title">Smart Loans for <span>Bright Futures</span></h5>
                       </div>
                     </div>
                     <h2 className="main-slider-one__title">
-                      <span className="main-slider-one__title__inner">
-                        <span className="main-slider-one__title__text main-slider-one__title__text--1">Smart finance</span>
+                      <span className="main-slider-one_title_inner">
+                        <span className="main-slider-one_titletext main-slider-onetitle_text--1">Smart finance</span>
                       </span>
-                      <span className="main-slider-one__title__inner">
-                        <span className="main-slider-one__title__text main-slider-one__title__text--2">solutions for your</span>
+                      <span className="main-slider-one_title_inner">
+                        <span className="main-slider-one_titletext main-slider-onetitle_text--2">solutions for your</span>
                       </span>
-                      <span className="main-slider-one__title__inner">
-                        <span className="main-slider-one__title__text main-slider-one__title__text--3">business</span>
+                      <span className="main-slider-one_title_inner">
+                        <span className="main-slider-one_titletext main-slider-onetitle_text--3">business</span>
                       </span>
                     </h2>
                     <div className="main-slider-one__button-group">
-                      <div className="main-slider-one__button-group__inner">
-                        <div className="main-slider-one__button main-slider-one__button--1">
+                      <div className="main-slider-one_button-group_inner">
+                        <div className="main-slider-one_button main-slider-one_button--1">
                           <a href="services.html" className="main-slider-one__btn-1 easilon-btn">
                             <span>our service</span>
                             <span className="easilon-btn__icon">
@@ -73,8 +73,8 @@ function MainSliderOne() {
                           </a>
                         </div>
                       </div>
-                      <div className="main-slider-one__button__inner">
-                        <div className="main-slider-one__button main-slider-one__button--2">
+                      <div className="main-slider-one_button_inner">
+                        <div className="main-slider-one_button main-slider-one_button--2">
                           <a href="apply-loan.html" className="easilon-btn easilon-btn--border">
                             <span>get started</span>
                             <span className="easilon-btn__icon">
@@ -94,7 +94,7 @@ function MainSliderOne() {
       </div>
 
       <div className="main-slider-one__form-wrapper">
-        <div className="main-slider-one__form-wrapper__inner">
+        <div className="main-slider-one_form-wrapper_inner">
           <div className="container">
             <div className="main-slider-one__form">
               <form action="#" id="loan-calculator-01" className="loan-calculator-form wow fadeInUp" data-wow-duration="1500ms">
@@ -118,7 +118,7 @@ function MainSliderOne() {
                       activeDotStyle={{ backgroundColor: '#1890ff' }}
                     />
                   </div>
-                  <div className="input-box__top input-box__top-border">
+                  <div className="input-box_top input-box_top-border">
                     <span>1 Month</span>
                     <span>12 Months</span>
                   </div>
@@ -161,4 +161,4 @@ function MainSliderOne() {
     </section>
   );
 }
-export default MainSliderOne;
+export default MainSliderOne;

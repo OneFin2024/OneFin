@@ -2,12 +2,30 @@ import React, { useState,useEffect} from 'react';
 import Select from 'react-select';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
-
+import { fetchPrequalify } from '../reducers/prequalifySlice.js'; 
+import Modal from 'react-bootstrap/Modal'; 
+import Button from 'react-bootstrap/Button'; 
+  
 function LoanApplication() {
   const navigate = useNavigate();
+  const dispatch=useDispatch()
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  // const { DataPrequalify } =useSelector (state => state.prequalify)
+  // console.log("this is the data user in doc profile",DataPrequalify);
+
+  // const { DataPrequalify } =useSelector (state => state.prequalify)
+
+
+
+
+
   const submitForm = () => {
-    
+     
     if(localStorage.getItem('user')){
     
     navigate('/LoanProg')
@@ -20,25 +38,26 @@ function LoanApplication() {
   }
 
 
-  const [formData, setFormData] = useState({
-    loanAmount: '',
-    monthlyIncome: '',
-    loanPurpose: '',
-    loanYears: '',
+  const [formData, setFormData] = useState({  
+   
     fullName: '',
     email: '',
     mobileNumber: '',
+    BusinessName:'',
+    StreetAdresse:'',
+    ZipCode:'',
     maritalStatus: '',
-    birthDate: '',
-    numberOfDependents: '',
-    houseInfo: '',
     street: '',
-    city: '',
+    Industry: '',
     state: '',
-    zip: '',
-    country: '',
+    InitiationYear: '',
+    CreditScore: '',
+    CreditRating: '',
   });
   useEffect(() => {
+
+    dispatch(fetchPrequalify())
+
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
       const user = JSON.parse(storedUser);
@@ -50,6 +69,7 @@ function LoanApplication() {
       }));
     }
   }, []);
+
   const loanPurposeOptions = [
     { value: 'home', label: 'Home Loan' },
     { value: 'bike', label: 'Bike Loan' },
@@ -83,13 +103,60 @@ function LoanApplication() {
   ];
 
   const stateOptions = [
-    { value: 'Barisal Division', label: 'Barisal Division' },
-    { value: 'Chittagong Division', label: 'Chittagong Division' },
-    { value: 'Dhaka Division', label: 'Dhaka Division' },
-    { value: 'Khulna Division', label: 'Khulna Division' },
-    { value: 'Rajshahi Division', label: 'Rajshahi Division' },
-    { value: 'Rangpur Division', label: 'Rangpur Division' },
-    { value: 'Sylhet Division', label: 'Sylhet Division' },
+    { value: 'Alabama', label: 'Alabama' },
+    { value: 'Alaska', label: 'Alaska' },
+    { value: 'Arizona', label: 'Arizona' },
+    { value: 'Arkansas', label: 'Arkansas' },
+    { value: 'California', label: 'California' },
+    { value: 'Colorado', label: 'Colorado' },
+    { value: 'Connecticut', label: 'Connecticut' },
+
+    { value: 'Delaware', label: 'Delaware' },
+    { value: 'District Of Columbia', label: 'District Of Columbia' },
+    { value: 'Florida', label: 'Florida' },
+    { value: 'Georgia', label: 'Georgia' },
+    { value: 'Hawaii', label: 'Hawaii' },
+    { value: 'Idaho', label: 'Idaho' },
+    { value: 'Illinois', label: 'Illinois ' },
+    { value: 'Indiana', label: 'Indiana' },
+    { value: 'Iowa', label: 'Iowa' },
+    { value: 'Kansas', label: 'Kansas' },
+    { value: 'Kentucky', label: 'Kentucky' },
+    { value: 'Louisiana', label: 'Louisiana' },
+    { value: 'Maine', label: 'Maine' },
+    { value: 'Maryland', label: 'Maryland' },
+    
+    { value: 'Massachusetts', label: 'Massachusetts' },
+    { value: 'Michigan', label: 'Michigan' },
+    { value: 'Minnesota', label: 'Minnesota' },
+    { value: 'Mississippi', label: 'Mississippi' },
+    { value: 'Missouri', label: 'Missouri' },
+    { value: 'Montana', label: 'Montana' },
+    { value: 'Nebraska', label: 'Nebraska' },  
+    { value: 'Nevada', label: 'Nevada' },
+    { value: 'New Hampshire', label: 'New Hampshire' },
+    { value: 'New Jersey', label: 'New Jersey' },
+    { value: 'New Mexico', label: 'New Mexico' },
+    { value: 'New York', label: 'New York' },
+    { value: 'North Carolina', label: 'North Carolina' },
+    { value: 'North Dakota', label: 'North Dakota' },
+    
+    { value: 'Ohio', label: 'Ohio' },
+    { value: 'Oklahoma', label: 'Oklahoma' },
+    { value: 'Oregon', label: 'Oregon' },
+    { value: 'Pennsylvania', label: 'Pennsylvania' },
+    { value: 'Rhode Island', label: 'Rhode Island' },
+    { value: 'South Carolina', label: 'South Carolina' },
+    { value: 'South Dakota', label: 'South Dakota' },
+    { value: 'Tennessee', label: 'Tennessee' },
+    { value: 'Texas', label: 'Texas' },
+    { value: 'Utah', label: 'Utah' },
+    { value: 'Vermont', label: 'Vermont' },
+    { value: 'Virginia', label: 'Virginia' },
+    { value: 'Washington', label: 'Washington' },
+    { value: 'West Virginia', label: 'West Virginia' },
+    { value: 'Wisconsin', label: 'Wisconsin' },
+    { value: 'Wyoming', label: 'Wyoming' },
   ];
 
   const countryOptions = [
@@ -138,7 +205,7 @@ const handleSubmit = async (e) => {
   };
 
   try {
-    const response = await axios.post('http://localhost:9987/loan-application', loanApplicationData);
+    const response = await axios.post('http://localhost:3001/loan-application', loanApplicationData);
     console.log('Form submitted successfully:', response.data);
   } catch (error) {
     console.error('Error submitting form:', error);
@@ -233,13 +300,13 @@ const handleSubmit = async (e) => {
              
                 <div className="col-md-6">
                   <div className="apply-loan__form__control">
-                    <label htmlFor="mobile-number">Business Name</label>
+                    <label htmlFor="Business-Name">Business Name</label>
                     <input
                       type="text"
                       id="Business-Name"
                       name="BusinessName"
                       placeholder="Business Name"
-                      value={formData.mobileNumber}
+                      value={formData.BusinessName}
                       onChange={handleChange}
                       required
                     />
@@ -247,73 +314,88 @@ const handleSubmit = async (e) => {
                 </div>
                 <div className="col-md-6">
                   <div className="apply-loan__form__control">
-                    <label htmlFor="mobile-number">Industry</label>
+                    <label htmlFor="StreetAdresse"> Street Adresse</label>
+                    <input
+                      type="text"
+                      id="Street-Adresse"
+                      name="StreetAdresse"
+                      placeholder="Street Adresse"
+                      value={formData.StreetAdresse}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="col-md-6">
+                  <div className="apply-loan__form__control">
+                    <label htmlFor="state">State</label>
+                    <Select
+                      options={stateOptions}
+                      onChange={(selectedOption) => handleSelectChange('State', selectedOption)}
+                    />
+                  </div>
+                </div>
+                
+
+                <div className="col-md-6">
+                  <div className="apply-loan__form__control">
+                    <label htmlFor="ZipCode">Zip Code</label>
+                    <input
+                      type="text"
+                      id="Zip-Code"
+                      name="ZipCode"
+                      placeholder="Zip Code"
+                      value={formData.ZipCode}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                </div>
+
+
+
+
+                <div className="col-md-6">
+                  <div className="apply-loan__form__control">
+                    <label htmlFor="Industry">Industry</label>
                     <input
                       type="text"
                       id="Industry"
                       name="Industry"
                       placeholder="Industry"
-                      value={formData.mobileNumber}
+                      value={formData.Industry}
                       onChange={handleChange}
                       required
                     />
                   </div>
                 </div>
+                
                 <div className="col-md-6">
                   <div className="apply-loan__form__control">
-                    <label htmlFor="mobile-number">Initiation Year - Min (2 years in business) *
+                    <label htmlFor="InitiationYear">Initiation Year *
                     </label>
                     <input
                       type="text"
-                      id="Industry"
-                      name="Industry"
-                      placeholder="Industry"
-                      value={formData.mobileNumber}
+                      id="InitiationYear"
+                      name="InitiationYear"
+                      placeholder="Min (2 years in business)"
+                      value={formData.InitiationYear}
                       onChange={handleChange}
                       required
                     />
                   </div>
                 </div>
-                <div className="col-md-6">
-                  <div className="apply-loan__form__control">
-                    <label htmlFor="mobile-number">State Tax ID
-                    </label>
-                    <input
-                      type="text"
-                      id="tax"
-                      name="tax"
-                      placeholder="State Tax ID"
-                      value={formData.mobileNumber}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                </div>
+               
 
 
 
-                <div className="col-md-6">
-                  <div className="apply-loan__form__control">
-                  <label htmlFor="mobile-number">Credit Score
-                    </label>
-                    <input
-                      type="text"
-                      id="tax"
-                      name="tax"
-                      placeholder="Credit Score"
-                      value={formData.mobileNumber}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-              </div>
               
                 
 
 
                 <div className="col-md-6">
                   <div className="apply-loan__form__control">
-                    <label>Credit Score
+                    <label>Credit Rating
                     *</label>
                     <Select
                       options={Creditrating}
@@ -321,6 +403,24 @@ const handleSubmit = async (e) => {
                     />
                   </div>
               </div>
+
+              <div className="col-md-6">
+                  <div className="apply-loan__form__control">
+                  <label htmlFor="CreditScore">Credit Score
+                    </label>
+                    <input
+                  
+                      type="text"
+                      id="CreditScore"
+                      name="CreditScore"
+                      placeholder="Credit Score"
+                      value={formData.CreditScore}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+              </div>
+              
 
 
                 </div>
@@ -331,15 +431,41 @@ const handleSubmit = async (e) => {
             </div>
           
 
+            {/* */}
 
-
-            <button type="submit" onClick={()=>{submitForm()}} className="apply-loan__form__btn easilon-btn">
+            <button  style={{"zIndex":0}} type="submit"
+              // onClick={()=>{
+              // handleShow()
+             
+              // }} 
+               className="apply-loan__form__btn easilon-btn">
               <span  >submit now</span>
               <span className="easilon-btn__icon">
                 <i className="icon-double-right-arrow" />
               </span>
-            </button>
+            </button>            
           </form>
+
+       
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Prequalify success</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>You can now Create account with us </Modal.Body>
+        <Modal.Footer>
+        
+          <button className="apply-loan__form__btn easilon-btn" 
+          onClick={()=>{
+            handleClose()
+          
+          }
+
+          }> 
+            Save Changes
+          </button>
+        </Modal.Footer>
+      </Modal>
         </div>
       </section>
     </div>
