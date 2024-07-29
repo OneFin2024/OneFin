@@ -1,8 +1,9 @@
+import React from 'react';
 import { Card, Dropdown } from 'react-bootstrap';
 import Chart from 'react-apexcharts';
 import { ApexOptions } from 'apexcharts';
 
-const RevenueChart = () => {
+const RevenueChart: React.FC = () => {
     const options: ApexOptions = {
         chart: {
             height: 350,
@@ -31,7 +32,7 @@ const RevenueChart = () => {
         },
         colors: ['#3cc469', '#188ae2'],
         xaxis: {
-            categories: ['2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015'],
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
             axisBorder: {
                 show: false,
             },
@@ -66,16 +67,17 @@ const RevenueChart = () => {
         },
     };
 
+    // Sample data
     const series = [
         {
-            name: 'Series A',
+            name: 'Loans Processed',
             type: 'area',
-            data: [50, 75, 30, 50, 75, 50, 75, 100],
+            data: [30, 40, 35, 50, 49, 60, 70, 80, 90, 100, 110, 120],
         },
         {
-            name: 'Series B',
+            name: 'Target',
             type: 'line',
-            data: [0, 40, 80, 40, 10, 40, 50, 70],
+            data: [40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95],
         },
     ];
 
@@ -88,7 +90,7 @@ const RevenueChart = () => {
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                         <Dropdown.Item>Action</Dropdown.Item>
-                        <Dropdown.Item>Anothther Action</Dropdown.Item>
+                        <Dropdown.Item>Another Action</Dropdown.Item>
                         <Dropdown.Item>Something Else</Dropdown.Item>
                         <Dropdown.Item>Separated link</Dropdown.Item>
                     </Dropdown.Menu>

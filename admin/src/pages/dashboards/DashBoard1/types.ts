@@ -1,12 +1,14 @@
-export type Message = {
+// types.ts
+
+export interface Message {
     id: number;
     avatar: string;
     sender: string;
     text: string;
     time: string;
-};
+}
 
-export type ProjectDetail = {
+export interface ProjectDetail {
     id: number;
     name: string;
     startDate: string;
@@ -14,4 +16,12 @@ export type ProjectDetail = {
     status: string;
     variant: string;
     clients: string;
-};
+}
+
+// Define Application type
+export interface Application {
+    id: number;
+    status: 'In Progress' | 'Need Documents' | 'Approved' | 'Denied' | 'Dropped';
+    processor: string;
+    requiredDocuments: boolean;
+}
