@@ -45,12 +45,12 @@ app.use((err, req, res, next) => {
 // Define routes
 // app.use(middleware)
 app.use('/api/auth', authRoutes);
+app.use('/api/loanApplication', loanApplicationRoutes);
 app.use("/api/applicantInformation", applicantInformationRoutes);
 app.use('/api/businessDetails', businessDetailsRoutes);
 app.use('/api/businessFinancialInformation', businessFinancialInformationRoutes);
 app.use('/api/contactInformation', contactInformationRoutes);
 app.use('/api/generalInfo', generalInfoRoutes);
-app.use('/api/loanApplication', loanApplicationRoutes);
 app.use('/api/requestDetails', requestDetailsRoutes);
 
 
@@ -69,7 +69,7 @@ db.sequelize.authenticate()
     return db.sequelize.sync();
   })
   .then(() => {
-    app.listen(3001, () => {
+    app.listen(9987, () => {
       console.log('Server is running on port 3001');
     });
   })
@@ -85,8 +85,8 @@ db.sequelize.authenticate()
   // })
   // .then(() => {
   //   console.log('Connection has been established successfully.');
-  //   app.listen(3000, () => {
-  //     console.log('Server is running on port 3001');
+  //   app.listen(9987, () => {
+  //     console.log('Server is running on port 9987');
   //   });
   // })
   // .catch(error => {
