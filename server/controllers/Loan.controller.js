@@ -22,9 +22,10 @@ module.exports = {
 },
 addPrequalify:async function(req,res){
     try {
-        const loan= await db.LoanPrequalify.create(req.body)
-        res.status(200).send(laon)    
+        const Loan= await db.LoanPrequalify.create(req.body)
+        res.status(200).send(Loan)    
     } catch (error) {
+        console.log();
         throw error    
     }
 },
