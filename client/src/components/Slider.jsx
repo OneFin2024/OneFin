@@ -88,8 +88,7 @@ function MainSliderOne() {
                 </div>
               </div>
             </div>
-            <img src="assets/images/shapes/main-slider-shape-1-1.png" alt="shape" className="main-slider-one__shape-one" />
-            <img src="assets/images/shapes/main-slider-shape-1-2.png" alt="shape" className="main-slider-one__shape-two" />
+           
           </div>
         </div>
       </div>
