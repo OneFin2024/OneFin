@@ -1,7 +1,6 @@
-
 module.exports = (sequelize, DataTypes) => {
   const LoanPrequalify = sequelize.define('LoanPrequalify', {
-  fullName: {
+    fullName: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -10,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     mobileNumber: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     BusinessName: {
@@ -22,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     ZipCode: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     Industry: {

@@ -40,19 +40,17 @@ function LoanApplication() {
 
   const [formData, setFormData] = useState({  
    
-    fullName: '',
-    email: '',
-    mobileNumber: '',
+    fullName: 'r',
+    email: 'r',
+    mobileNumber: '9',
     BusinessName:'',
     StreetAdresse:'',
     ZipCode:'',
-    maritalStatus: '',
-    street: '',
     Industry: '',
-    state: '',
     InitiationYear: '',
     CreditScore: '',
     CreditRating: '',
+    state: 'x'
   });
   useEffect(() => {
 
@@ -189,10 +187,7 @@ const handleSubmit = async (e) => {
   const storedUser = localStorage.getItem('user');
   const user = storedUser ? JSON.parse(storedUser) : null;
   
-  if (!user) {
-    alert('User not logged in');
-    return;
-  }
+
 
   // const token = user.token; // Assuming your JWT token is stored in user.token
   // const header = {
@@ -205,6 +200,7 @@ const handleSubmit = async (e) => {
   };
 
   try {
+    console.log(formData);
     const response = await axios.post('http://localhost:3001/loan-application', loanApplicationData);
     console.log('Form submitted successfully:', response.data);
   } catch (error) {
@@ -331,7 +327,7 @@ const handleSubmit = async (e) => {
                     <label htmlFor="state">State</label>
                     <Select
                       options={stateOptions}
-                      onChange={(selectedOption) => handleSelectChange('State', selectedOption)}
+                      onChange={(selectedOption) => handleSelectChange('state', selectedOption)}
                     />
                   </div>
                 </div>
@@ -434,10 +430,10 @@ const handleSubmit = async (e) => {
             {/* */}
 
             <button  style={{"zIndex":0}} type="submit"
-              // onClick={()=>{
-              // handleShow()
-             
-              // }} 
+                onClick={()=>{
+                handleShow()
+                  
+                }} 
                className="apply-loan__form__btn easilon-btn">
               <span  >submit now</span>
               <span className="easilon-btn__icon">
@@ -458,7 +454,7 @@ const handleSubmit = async (e) => {
           <button className="apply-loan__form__btn easilon-btn" 
           onClick={()=>{
             handleClose()
-          
+            submitForm()
           }
 
           }> 
