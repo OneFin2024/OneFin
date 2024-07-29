@@ -5,13 +5,17 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { fetchPrequalify } from '../reducers/prequalifySlice.js'; 
-
-
+import Modal from 'react-bootstrap/Modal'; 
+import Button from 'react-bootstrap/Button'; 
+  
 function LoanApplication() {
   const navigate = useNavigate();
   const dispatch=useDispatch()
+  const [show, setShow] = useState(false);
 
-  // const { Data } =useSelector (state => state.prequalify)
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  // const { DataPrequalify } =useSelector (state => state.prequalify)
   // console.log("this is the data user in doc profile",DataPrequalify);
 
   // const { DataPrequalify } =useSelector (state => state.prequalify)
@@ -201,7 +205,7 @@ const handleSubmit = async (e) => {
   };
 
   try {
-    const response = await axios.post('http://localhost:9987/loan-application', loanApplicationData);
+    const response = await axios.post('http://localhost:3001/loan-application', loanApplicationData);
     console.log('Form submitted successfully:', response.data);
   } catch (error) {
     console.error('Error submitting form:', error);
@@ -405,6 +409,7 @@ const handleSubmit = async (e) => {
                   <label htmlFor="CreditScore">Credit Score
                     </label>
                     <input
+                  
                       type="text"
                       id="CreditScore"
                       name="CreditScore"
@@ -426,15 +431,41 @@ const handleSubmit = async (e) => {
             </div>
           
 
+            {/* */}
 
-
-            <button style={{"zIndex":0}}type="submit" onClick={()=>{submitForm()}} className="apply-loan__form__btn easilon-btn">
+            <button  style={{"zIndex":0}} type="submit"
+              // onClick={()=>{
+              // handleShow()
+             
+              // }} 
+               className="apply-loan__form__btn easilon-btn">
               <span  >submit now</span>
               <span className="easilon-btn__icon">
                 <i className="icon-double-right-arrow" />
               </span>
-            </button>
+            </button>            
           </form>
+
+       
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Prequalify success</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>You can now Create account with us </Modal.Body>
+        <Modal.Footer>
+        
+          <button className="apply-loan__form__btn easilon-btn" 
+          onClick={()=>{
+            handleClose()
+          
+          }
+
+          }> 
+            Save Changes
+          </button>
+        </Modal.Footer>
+      </Modal>
         </div>
       </section>
     </div>

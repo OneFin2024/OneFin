@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import prequalifySlice from './reducers/prequalifySlice';
+import prequalifySlice from "./reducers/prequalifySlice";
 
 
 

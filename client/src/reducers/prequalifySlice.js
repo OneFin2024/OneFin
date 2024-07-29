@@ -4,7 +4,7 @@ import axios from 'axios'
 export const fetchPrequalify=createAsyncThunk('fetchPrequalify',async ()=>{
  
     try {
-     const res =await axios.get("http://localhost:9987/api/Prequalify/getAllPrequalify")
+     const res =await axios.get("http://localhost:3001/api/Prequalify/getAllPrequalify")
 
      console.log("aaaaaaaaaaaaaaaaaaaaaaa",res.data);   
      
