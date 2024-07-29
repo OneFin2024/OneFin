@@ -113,7 +113,7 @@ const Landing = React.lazy(() => import('../pages/Landing'));
 const loading = () => <div className=""></div>;
 
 type LoadComponentProps = {
-  component: React.LazyExoticComponent<() => JSX.Element>;
+  component: React.LazyExoticComponent<any>;
 };
 
 const LoadComponent = ({ component: Component }: LoadComponentProps) => (

@@ -1,8 +1,9 @@
+import React from 'react';
 import { Card, Dropdown } from 'react-bootstrap';
 import Chart from 'react-apexcharts';
 import { ApexOptions } from 'apexcharts';
 
-const SalesChart = () => {
+const SalesChart: React.FC = () => {
     const apexOpts: ApexOptions = {
         chart: {
             type: 'donut',
@@ -44,13 +45,14 @@ const SalesChart = () => {
                 useSeriesColors: true,
             },
         },
-        labels: ['In-Store Loans', 'Download Loans', 'Mail-Order Loans'],
+        labels: ['Rejected Loans', 'Accepted Loans'],
         tooltip: {
             enabled: false,
         },
     };
 
-    const apexData = [30, 12, 20];
+    // Sample data
+    const apexData = [45, 55]; // 45% Rejected, 55% Accepted
 
     return (
         <Card>
@@ -61,13 +63,13 @@ const SalesChart = () => {
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                         <Dropdown.Item>Action</Dropdown.Item>
-                        <Dropdown.Item>Anothther Action</Dropdown.Item>
+                        <Dropdown.Item>Another Action</Dropdown.Item>
                         <Dropdown.Item>Something Else</Dropdown.Item>
                         <Dropdown.Item>Separated link</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
 
-                <h4 className="header-title mt-0">Daily Sales</h4>
+                <h4 className="header-title mt-0">Loans Prequalify Charts</h4>
 
                 <div dir="ltr">
                     <Chart

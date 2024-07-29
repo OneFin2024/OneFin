@@ -4,7 +4,7 @@ import { Statistic } from './types';
 
 // images
 import avatar2 from '../../../assets/images/users/user-9.jpg';
-
+let Loans = 0
 const statisticsWidgets: Statistic[] = [
     {
         stats: 6599,
@@ -12,8 +12,8 @@ const statisticsWidgets: Statistic[] = [
         variant: 'primary',
     },
     {
-        stats: 5894,
-        title: 'Total Revenue',
+        stats: Loans,
+        title: 'Total Loans',
         variant: 'pink',
     },
     {
