@@ -14,6 +14,7 @@ export const Login = () => {
 
   const { email, password, fullName,phone } = formData;
   const [Error,setError] = useState('')
+  
   const dispatch = useDispatch();
   const { user, isLoading, isError, isSuccess, message } = useSelector(
     (state) => state.auth
@@ -223,17 +224,18 @@ export const Login = () => {
                               required
                               className="login-page__password"
                             />
+
                             <span className="login-page__form__icon">
                               <i className="icon-padlock" />
                             </span>
                             <i className="toggle-password pass-field-icon fa fa-fw fa-eye-slash" />
                           </div>
+                                                    {Error && <p style={{color:'red'}}>{Error}</p>}
                           <div className="login-page__form__input-box login-page__form__input-box--button">
                             <button type="submit" className="easilon-btn login-page__form__btn"><span>register</span></button>
                           </div>
                         </form>
                         {isLoading && <p>Loading...</p>}
-                        {isError && <p>{message}</p>}
                         {isSuccess && <p>User registered successfully</p>}
                         <div className="login-page__signin">
                           <h4 className="login-page__signin__title">already have an account? <a onClick={() => setHasAccount(true)}>log in</a></h4>

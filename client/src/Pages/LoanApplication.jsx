@@ -168,11 +168,13 @@ function LoanApplication() {
       setLowCreditScore(true);
       return;
     }
+  
+      const loanApplicationData = {
+        ...formData,
+        userId: user?.user.id,
+      };
 
-    const loanApplicationData = {
-      ...formData,
-      userId: user.user.id,
-    };
+    
 
     try {
       console.log(formData);
