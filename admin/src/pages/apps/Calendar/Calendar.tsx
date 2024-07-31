@@ -1,4 +1,5 @@
-import FullCalendar, { EventDropArg } from '@fullcalendar/react';
+import FullCalendar from '@fullcalendar/react';
+import EventDropArg from "@fullcalendar/react"
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -25,7 +26,7 @@ const Calendar = ({ onDateClick, onEventClick, onDrop, onEventDrop, events }: Ca
     const handleDrop = (arg: any) => {
         onDrop(arg);
     };
-    const handleEventDrop = (arg: EventDropArg) => {
+    const handleEventDrop = (arg: any) => {
         onEventDrop(arg);
     };
 

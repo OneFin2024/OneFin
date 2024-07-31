@@ -15,6 +15,7 @@ import AddEditEvent from './AddEditEvent';
 // dummy data
 import { defaultEvents } from './data';
 import { FormInput } from '../../../components/form';
+import FullCalendar from '@fullcalendar/react';
 
 const SidePanel = () => {
     // external events
@@ -183,7 +184,7 @@ const CalendarApp = () => {
     /**
      * on event drop
      */
-    const onEventDrop = (arg: EventDropArg) => {
+    const onEventDrop = (arg: any) => {
         const modifiedEvents = [...events];
         const idx = modifiedEvents.findIndex((e: any) => e['id'] === arg.event.id);
         modifiedEvents[idx]['title'] = arg.event.title;
