@@ -1,7 +1,5 @@
 client/node_modules
-client/package-lock.json
 server/node_modules
-server/package-lock.json
 server/build
 admin/build
 
@@ -10,4 +8,3 @@ pnpm-lock.yaml
 node_modules
 # Keep environment variables out of version control
 .env
-package-lock.json
