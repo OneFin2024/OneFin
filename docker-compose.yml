@@ -61,6 +61,8 @@ services:
     restart: always
     ports:
       - "8081:80"
+    volumes:
+      - ./client/nginx/conf.d:/etc/nginx/conf.d
   
   admin:
     depends_on:
@@ -72,6 +74,20 @@ services:
     restart: always
     ports:
       - "8082:80"
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - /etc/letsencrypt:/etc/letsencrypt  # Mount your SSL certificates
+    depends_on:
+      - client
+      - admin
+      - server
+    command: [nginx-debug, '-g', 'daemon off;']
+    restart: always
 
 volumes:
   db_data:
