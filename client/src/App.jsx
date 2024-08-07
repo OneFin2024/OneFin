@@ -18,6 +18,7 @@ import LoanProg from "./Pages/LoanProg.jsx";
 let App = () => {
   return (
     <Provider store={store}>
+      <div style={{textDecoration:'none'}}>
          <Topbar/>
          <Navbare/>
       <Router>
@@ -35,6 +36,7 @@ let App = () => {
         </div>
       </Router>
       <Footer/>
+    </div>
     </Provider>
   )
 }

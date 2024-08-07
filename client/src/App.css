@@ -4,7 +4,10 @@ body {
   /* width: 100%; */
   padding: 0;
   background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/debut_light.png");
+
 }
+
+
 
 .nav {
   display: inline-flex;
