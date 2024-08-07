@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm, Resolver, SubmitHandler, UnpackNestedValue, DeepPartial, FieldValues } from 'react-hook-form';
 
 type VerticalFromProps<TFormValues extends FieldValues> = {
-    defaultValues?: UnpackNestedValue<DeepPartial<TFormValues>>;
+    defaultValues?: any;
     resolver?: Resolver<TFormValues>;
     children?: React.ReactNode;
     onSubmit: SubmitHandler<TFormValues>;
