@@ -78,8 +78,13 @@
   --easilon-letter-space-xl: -0.03em;
   --section-space: 120px;
   --section-space2: 116px;
-}
+  text-decoration: none;
 
+}
+body {
+  text-decoration: none;
+
+}
 /*--------------------------------------------------------------
 # Utility
 --------------------------------------------------------------*/
