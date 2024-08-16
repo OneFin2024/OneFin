@@ -35,79 +35,56 @@ export const Home = ()=> {
                 <div className="about-one__experience">
                   <div className="about-one__experience__bg" style={{backgroundImage: 'url(assets/images/shapes/about-experience-bg-1-1.png)'}} />
                   {/* /.about-one__experience__bg */}
-                  <div className="about-one__experience__content">
-                    <a href="https://www.youtube.com/watch?v=h9MbznbxlLc" className="video-btn video-popup">
-                      <i className="icon-play" />
-                      <span />
-                      <span />
-                      <span />
-                      <span />
-                    </a>{/* /.video-btn */}
-                    <h3 className="about-one__experience__year">15+</h3>{/* /.about-one__experience__year */}
-                    <h3 className="about-one__experience__title">year of experience</h3>
-                    {/* /.about-one__experience__title */}
-                  </div>{/* /.about-one__experience__content */}
+                 
                 </div>{/* /.about-one__experience */}
               </div>{/* /.about-one__image__inner */}
             </div>{/* /.about-one__image */}
           </div>{/* /.col-lg-6 */}
           <div className="col-lg-6">
-            <div className="about-one__content">
-              <div className="sec-title @@extraClassName">
-                <div className="sec-title__top">
-                  <div className="sec-title__shape">
-                    <div className="sec-title__shape__one" />{/* /.sec-title__shape__one */}
-                    <div className="sec-title__shape__two" />{/* /.sec-title__shape__one */}
-                  </div>{/* /.sec-title__shape */}
-                  <h6 className="sec-title__tagline">welcome to easilon</h6>{/* /.sec-title__tagline */}
-                </div>{/* /.sec-title__top */}
-                <h3 className="sec-title__title">Our Loans will Fill Your <br /> Dreams Come True</h3>{/* /.sec-title__title */}
-              </div>{/* /.sec-title */}
-              <div className="about-one__text-box wow fadeInUp" data-wow-duration="1500ms">
-                <p className="about-one__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco</p>{/* /.about-one__text */}
-              </div>{/* /.about-one__text-box */}
-              <div className="about-one__list">
-                <div className="about-one__list__left wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
-                  <div className="about-one__list__item">
-                    <span className="about-one__list__icon">
-                      <i className="icon-check-mark" />
-                    </span>{/* /.about-one__list__icon */}
-                    quick loan process
-                  </div>
-                  <div className="about-one__list__item">
-                    <span className="about-one__list__icon">
-                      <i className="icon-check-mark" />
-                    </span>{/* /.about-one__list__icon */}
-                    very low rates
-                  </div>
-                </div>{/* /.about-one__list__left */}
-                <div className="about-one__list__right wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
-                  <div className="about-one__list__item">
-                    <span className="about-one__list__icon">
-                      <i className="icon-check-mark" />
-                    </span>{/* /.about-one__list__icon */}
-                    small business loan
-                  </div>
-                  <div className="about-one__list__item">
-                    <span className="about-one__list__icon">
-                      <i className="icon-check-mark" />
-                    </span>{/* /.about-one__list__icon */}
-                    studying abroad loan
-                  </div>
-                </div>{/* /.about-one__list__right */}
-              </div>{/* /.about-one__list */}
-              <div className="about-one__button wow fadeInUp" data-wow-duration="1500ms">
-                <a href="about.html" className="easilon-btn easilon-btn--border">
-                  <span>know about us</span>
-                  <span className="easilon-btn__icon">
-                    <i className="icon-double-right-arrow" />
-                  </span>
-                </a>{/* /.easilon-btn */}
-              </div>{/* /.about-one__button */}
-            </div>{/* /.about-one__content */}
-          </div>{/* /.col-lg-6 */}
+  <div className="about-one__content">
+    <div className="sec-title">
+      <div className="sec-title__top">
+        <div className="sec-title__shape">
+          <div className="sec-title__shape__one" />
+          <div className="sec-title__shape__two" />
+        </div>
+      </div>
+      <h3 className="sec-title__title">
+        Empowering Your Business with SBA Loans
+      </h3>
+    </div>
+    <div className="about-one__text-box wow fadeInUp" data-wow-duration="1500ms">
+      <p className="about-one__text">
+        Founded in 2020, our company is dedicated to helping businesses through our <strong>Free SBA Assistance Program</strong>. We provide comprehensive support from application initiation to documentation, qualification, and submission.
+      </p>
+    </div>
+    <div className="about-one__list">
+      <div className="about-one__list__left wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
+        <div className="about-one__list__item">
+          <span className="about-one__list__icon">
+            <i className="icon-check-mark" />
+          </span>
+          Free SBA assistance for businesses
+        </div>
+        <div className="about-one__list__item">
+          <span className="about-one__list__icon">
+            <i className="icon-check-mark" />
+          </span>
+          Comprehensive support throughout the loan process
+        </div>
+      </div>
+    </div>
+    <div className="about-one__button wow fadeInUp" data-wow-duration="1500ms">
+      <a href="about.html" className="easilon-btn easilon-btn--border">
+        <span>Learn More About Our SBA Assistance</span>
+        <span className="easilon-btn__icon">
+          <i className="icon-double-right-arrow" />
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+
         </div>{/* /.row gutter-y-50 */}
       </div>{/* /.container */}
       <img src="assets/images/shapes/about-shape-1-2.png" alt="shape" className="about-one__shape" />
@@ -123,7 +100,6 @@ export const Home = ()=> {
               <div className="sec-title__shape__one" />{/* /.sec-title__shape__one */}
               <div className="sec-title__shape__two" />{/* /.sec-title__shape__one */}
             </div>{/* /.sec-title__shape */}
-            <h6 className="sec-title__tagline">What We’re Offering</h6>{/* /.sec-title__tagline */}
             <div className="sec-title__shape">
               <div className="sec-title__shape__one" />{/* /.sec-title__shape__one */}
               <div className="sec-title__shape__two" />{/* /.sec-title__shape__one */}
@@ -131,100 +107,9 @@ export const Home = ()=> {
           </div>{/* /.sec-title__top */}
         </div>{/* /.sec-title */}
       </div>{/* /.container */}
-      <div className="services-one__slide">
-        <h2 className="services-one__slide__text services-one__slide__text--one">home loan</h2>
-        {/* /.services-one__slide__text */}
-        <span className="services-one__slide__icon"><i className="icon-graduation" /></span>
-        {/* /.services-one__slide__icon */}
-        <h2 className="services-one__slide__text services-one__slide__text--two">education</h2>
-        {/* /.services-one__slide__text */}
-        <span className="services-one__slide__icon"><i className="icon-car" /></span>{/* /.services-one__slide__icon */}
-        <h2 className="services-one__slide__text services-one__slide__text--one">auto loan</h2>
-        {/* /.services-one__slide__text */}
-        <span className="services-one__slide__icon"><i className="icon-graduation" /></span>
-        {/* /.services-one__slide__icon */}
-        <h2 className="services-one__slide__text services-one__slide__text--two">personal loan</h2>
-        {/* /.services-one__slide__text */}
-        <span className="services-one__slide__icon"><i className="icon-car" /></span>{/* /.services-one__slide__icon */}
-        <h2 className="services-one__slide__text services-one__slide__text--one">business loan</h2>
-        {/* /.services-one__slide__text */}
-        <span className="services-one__slide__icon"><i className="icon-graduation" /></span>
-        {/* /.services-one__slide__icon */}
-        <h2 className="services-one__slide__text services-one__slide__text--two">bike loan</h2>
-        {/* /.services-one__slide__text */}
-        <span className="services-one__slide__icon"><i className="icon-car" /></span>{/* /.services-one__slide__icon */}
-      </div>
-      <div className="container">
-        <div className="services-one__main-tab-box tabs-box">
-          <div className="tab-box-buttons wow fadeInLeft animated" data-wow-delay="00ms" data-wow-duration="1500ms">
-            <ul className="tab-buttons">
-              <li data-tab="#auto-loan" className="tab-btn active-btn">
-                <div className="tab-btn__inner">
-                  auto loan
-                  <a href="service-d-auto-loan.html" className="tab-btn__icon"><i className="icon-next" /></a>
-                </div>
-              </li>
-              <li data-tab="#personal-loan" className="tab-btn">
-                <div className="tab-btn__inner">
-                  personal loan
-                  <a href="service-d-personal-loan.html" className="tab-btn__icon"><i className="icon-next" /></a>
-                </div>
-              </li>
-              <li data-tab="#home-loan" className="tab-btn">
-                <div className="tab-btn__inner">
-                  buy home loan
-                  <a href="service-d-home-loan.html" className="tab-btn__icon"><i className="icon-next" /></a>
-                </div>
-              </li>
-              <li data-tab="#study-loan" className="tab-btn">
-                <div className="tab-btn__inner">
-                  study abroad loan
-                  <a href="service-d-study-loan.html" className="tab-btn__icon"><i className="icon-next" /></a>
-                </div>
-              </li>
-            </ul>{/* /.tab-buttons */}
-          </div>{/* /.tab-box-buttons */}
-          <div className="tabs-content wow fadeInRight animated" data-wow-delay="200ms" data-wow-duration="1500ms">
-            <div className="tab active-tab fadeInUp animated" data-wow-delay="200ms" id="auto-loan" style={{display: 'block'}}>
-              <div className="services-one__service">
-                <a href="service-d-auto-loan.html" className="services-one__service__image">
-                  <img src="assets/images/services/service-1-1.jpg" alt="service" />
-                  <img src="assets/images/services/service-1-1.jpg" alt="service" />
-                  <span className="services-one__service__overlay" />
-                </a>{/* /.services-one__service__image */}
-              </div>{/* /.services-one__service */}
-            </div>{/* /.modern-tiels-tab */}
-            <div className="tab fadeInUp animated" data-wow-delay="200ms" id="personal-loan" style={{display: 'none'}}>
-              <div className="services-one__service">
-                <a href="service-d-personal-loan.html" className="services-one__service__image">
-                  <img src="assets/images/services/service-1-2.jpg" alt="service" />
-                  <img src="assets/images/services/service-1-2.jpg" alt="service" />
-                  <span className="services-one__service__overlay" />
-                </a>{/* /.services-one__service__image */}
-              </div>{/* /.services-one__service */}
-            </div>{/* /.floor-removal-tab */}
-            <div className="tab fadeInUp animated" data-wow-delay="200ms" id="home-loan" style={{display: 'none'}}>
-              <div className="services-one__service">
-                <a href="service-d-home-loan.html" className="services-one__service__image">
-                  <img src="assets/images/services/service-1-3.jpg" alt="service" />
-                  <img src="assets/images/services/service-1-3.jpg" alt="service" />
-                  <span className="services-one__service__overlay" />
-                </a>{/* /.services-one__service__image */}
-              </div>{/* /.services-one__service */}
-            </div>{/* /.kitchen-strip-outs-tab */}
-            <div className="tab fadeInUp animated" data-wow-delay="200ms" id="study-loan" style={{display: 'none'}}>
-              <div className="services-one__service">
-                <a href="service-d-study-loan.html" className="services-one__service__image">
-                  <img src="assets/images/services/service-1-4.jpg" alt="service" />
-                  <img src="assets/images/services/service-1-4.jpg" alt="service" />
-                  <span className="services-one__service__overlay" />
-                </a>{/* /.services-one__service__image */}
-              </div>{/* /.services-one__service */}
-            </div>{/* /.wood-floor-repair-tab */}
-          </div>{/* /.tab-content */}
-        </div>{/* /.tabs-box */}
-      </div>{/* /.container */}
-      <section className="features-one">
+   
+  
+     <section className="features-one">
         <div className="features-one__bg" />{/* /.features-one__bg */}
         <div className="container">
           <div className="features-one__inner">
@@ -269,8 +154,8 @@ export const Home = ()=> {
           </div>{/* /.features-one__inner */}
         </div>{/* /.container */}
         <img src="assets/images/shapes/features-money-1-1.png" alt="money" className="features-one__money" />
-      </section>{/* /.features-one */}
-    </section>{/* /.services-one section-space-top */}
+      </section>
+    </section>
     <section className="work-process-one section-space">
       <div className="container">
         <div className="sec-title sec-title--center">
@@ -367,62 +252,51 @@ export const Home = ()=> {
       <div className="company-transparency-one__bg" style={{backgroundImage: 'url(assets/images/backgrounds/company-transparency-bg-1-1.jpg)'}} />
       {/* /.company-transparency-one__bg */}
       <div className="container">
-        <div className="row gutter-y-40">
-          <div className="col-lg-12">
-            <div className="company-transparency-one__content">
-              <div className="sec-title @@extraClassName">
-                <div className="sec-title__top">
-                  <div className="sec-title__shape">
-                    <div className="sec-title__shape__one" />{/* /.sec-title__shape__one */}
-                    <div className="sec-title__shape__two" />{/* /.sec-title__shape__one */}
-                  </div>{/* /.sec-title__shape */}
-                  <h6 className="sec-title__tagline">company transparency</h6>{/* /.sec-title__tagline */}
-                </div>{/* /.sec-title__top */}
-                <h3 className="sec-title__title">our company core <br /> value</h3>{/* /.sec-title__title */}
-              </div>{/* /.sec-title */}
-              <div className="company-transparency-one__main-tab-box tabs-box wow fadeInUp animated" data-wow-duration="1500ms">
-                <ul className="tab-buttons">
-                  <li data-tab="#innovative" className="tab-btn active-btn">Innovativel</li>
-                  <li data-tab="#talent" className="tab-btn">Talent</li>
-                  <li data-tab="#enabling" className="tab-btn">Enabling</li>
-                  <li data-tab="#commercially-responsible" className="tab-btn">Commercially Responsible</li>
-                </ul>{/* /.tab-buttons */}
-                <div className="tabs-content">
-                  <div className="tab active-tab fadeInUp animated" data-wow-delay="200ms" id="innovative" style={{display: 'block'}}>
-                    <p className="tabs-content__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                      incididunt ut labore et dolore Lorem ipsum dolor sit amet, consectetur adipiscing
-                      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  </div>{/* /.innovative-tab */}
-                  <div className="tab fadeInUp animated" data-wow-delay="200ms" id="talent">
-                    <p className="tabs-content__text">We are trusted by many clients from all over the country. Cras non dui id ex mattis
-                      vehicula. Nullam posuere ligula non libero mollis, non ornare sapien rutrum. Quisque
-                      vitae risus venenatis, dignissim felis id</p>
-                  </div>{/* /.talent-tab */}
-                  <div className="tab fadeInUp animated" data-wow-delay="200ms" id="enabling">
-                    <p className="tabs-content__text">We are trusted by many clients from all over the country. Cras non dui id ex mattis
-                      vehicula. Nullam posuere ligula non libero mollis, non ornare sapien rutrum. Quisque
-                      vitae risus venenatis.</p>
-                  </div>{/* /.enabling-tab */}
-                  <div className="tab fadeInUp animated" data-wow-delay="200ms" id="commercially-responsible">
-                    <p className="tabs-content__text">There are many variations of passages of Lorem Ipsum available, but the majority have
-                      suffered alteration in some form, by injected humour, or randomised words which
-                      don't look even slightly believable. If you are going to use a passag</p>
-                  </div>{/* /.commercially-responsible-tab */}
-                </div>{/* /.tab-content */}
-              </div>{/* /.company-transparency-one__main-tab-box */}
-              <div className="company-transparency-one__call wow fadeInUp" data-wow-duration="1500ms">
-                <span className="company-transparency-one__call__icon">
-                  <i className="icon-telephone" />
-                </span>{/* /.company-transparency-one__call__icon */}
-                <div className="company-transparency-one__call__content">
-                  <p className="company-transparency-one__call__title">call us any time</p>
-                  <a href="tel:+163-2654-3654" className="company-transparency-one__call__number">+163-2654-3654</a>
-                </div>{/* /.company-transparency-one__call__content */}
-              </div>{/* /.company-transparency-one__call */}
-            </div>{/* /.company-transparency-one__content */}
-          </div>{/* /.col-lg-12 */}
-        </div>{/* /.row gutter-y-40 */}
-      </div>{/* /.container */}
+  <div className="row gutter-y-40">
+    <div className="col-lg-12">
+      <div className="company-transparency-one__content">
+        <div className="sec-title">
+          <div className="sec-title__top">
+            <div className="sec-title__shape">
+              <div className="sec-title__shape__one" />{/* /.sec-title__shape__one */}
+              <div className="sec-title__shape__two" />{/* /.sec-title__shape__two */}
+            </div>{/* /.sec-title__shape */}
+            <h6 className="sec-title__tagline">Company Values</h6>{/* /.sec-title__tagline */}
+          </div>{/* /.sec-title__top */}
+          <h3 className="sec-title__title">Core Values That Drive Our Innovation</h3>{/* /.sec-title__title */}
+        </div>{/* /.sec-title */}
+        <div className="company-transparency-one__main-tab-box tabs-box wow fadeInUp animated" data-wow-duration="1500ms">
+          <ul className="tab-buttons">
+            <li data-tab="#values" className="tab-btn active-btn">Core Values</li>
+            <li data-tab="#services" className="tab-btn">Our Services</li>
+          </ul>{/* /.tab-buttons */}
+          <div className="tabs-content">
+            <div className="tab active-tab fadeInUp animated" data-wow-delay="200ms" id="values" style={{display: 'block'}}>
+              <p className="tabs-content__text">
+                The values of our organization are our core beliefs and guide our culture and operations. They create a positive environment where we can innovate and thrive. Our commitment is to operate with integrity, transparency, and dedication to excellence.
+              </p>
+            </div>{/* /.values-tab */}
+            <div className="tab fadeInUp animated" data-wow-delay="200ms" id="services">
+              <p className="tabs-content__text">
+                At OneFin Capital, we specialize in matching business owners with the right lenders. Our prequalification process is designed to identify the best lending options based on your financial needs, company size, revenue, and growth. This personalized approach ensures you find the most suitable funding solutions for your business.
+              </p>
+            </div>{/* /.services-tab */}
+          </div>{/* /.tabs-content */}
+        </div>{/* /.company-transparency-one__main-tab-box */}
+        <div className="company-transparency-one__call wow fadeInUp" data-wow-duration="1500ms">
+          <span className="company-transparency-one__call__icon">
+            <i className="icon-telephone" />
+          </span>{/* /.company-transparency-one__call__icon */}
+          <div className="company-transparency-one__call__content">
+            <p className="company-transparency-one__call__title">Call Us Anytime</p>
+            <a href="tel:+163-2654-3654" className="company-transparency-one__call__number">+163-2654-3654</a>
+          </div>{/* /.company-transparency-one__call__content */}
+        </div>{/* /.company-transparency-one__call */}
+      </div>{/* /.company-transparency-one__content */}
+    </div>{/* /.col-lg-12 */}
+  </div>{/* /.row gutter-y-40 */}
+</div>{/* /.container */}
+
       <img src="assets/images/shapes/company-transparency-shape-1-1.png" alt="shape" className="company-transparency-one__shape" />
     </section>{/* /.company-transparency-one section-space */}
     <section className="team-one section-space" id="team">
@@ -439,7 +313,7 @@ export const Home = ()=> {
               <div className="sec-title__shape__two" />{/* /.sec-title__shape__one */}
             </div>{/* /.sec-title__shape */}
           </div>{/* /.sec-title__top */}
-          <h3 className="sec-title__title">our awesome team</h3>{/* /.sec-title__title */}
+          <h3 className="sec-title__title">Our Business Loan Experts are here to help you </h3>{/* /.sec-title__title */}
         </div>{/* /.sec-title */}
         <div className="team-one__carousel easilon-owl__carousel easilon-owl__carousel--basic-nav owl-carousel owl-theme" data-owl-options="{
 			&quot;items&quot;: 1,
@@ -617,87 +491,73 @@ export const Home = ()=> {
         </div>{/* /.team-one__carousel */}
       </div>{/* /.container */}
     </section>{/* /.team-one section-space */}
-    <section className="faq-one section-space">
-      <div className="container">
-        <div className="row gutter-y-50 align-items-center">
-          <div className="col-lg-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
-            <div className="faq-one__image">
-              <div className="faq-one__image__inner">
-                <img src="assets/images/faq/faq-1-1.jpg" alt="faq" />
-              </div>{/* /.faq-one__image__inner */}
-              <img src="assets/images/shapes/faq-border-1-1.png" alt="border" className="faq-one__image__border" />
-            </div>{/* /.faq-one__image */}
-          </div>{/* /.col-lg-6 */}
-          <div className="col-lg-6">
-            <div className="faq-one__content">
-              <div className="sec-title @@extraClassName">
-                <div className="sec-title__top">
-                  <div className="sec-title__shape">
-                    <div className="sec-title__shape__one" />{/* /.sec-title__shape__one */}
-                    <div className="sec-title__shape__two" />{/* /.sec-title__shape__one */}
-                  </div>{/* /.sec-title__shape */}
-                  <h6 className="sec-title__tagline">FAQ</h6>{/* /.sec-title__tagline */}
-                </div>{/* /.sec-title__top */}
-                <h3 className="sec-title__title">frequently Asked <br /> Questions ?</h3>{/* /.sec-title__title */}
-              </div>{/* /.sec-title */}
-              <div className="faq-one__accordion">
-                <div className="faq-accordion easilon-accordion" data-grp-name="easilon-accordion">
-                  <div className="accordion active wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
-                    <div className="accordion-title">
-                      <h4>
-                        What types of loans are available?
-                        <span className="accordion-title__icon" />{/* /.accordion-title__icon */}
-                      </h4>
-                    </div>{/* /.accordion-title */}
-                    <div className="accordion-content">
-                      <div className="inner">
-                        <p>Common types include personal loans, home loans mortgages, auto loans, student loans, and business loans.</p>
-                      </div>{/* /.inner */}
-                    </div>{/* /.accordion-content */}
-                  </div>{/* /.accordion-item */}
-                  <div className="accordion wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="50ms">
-                    <div className="accordion-title">
-                      <h4>
-                        How does the loan application process work?
-                        <span className="accordion-title__icon" />{/* /.accordion-title__icon */}
-                      </h4>
-                    </div>{/* /.accordion-title */}
-                    <div className="accordion-content">
-                      <div className="inner">
-                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there
-                          isn't anything embarrassing hidden in the middle of text. All the Lorem
-                          Ipsum generators on the Internet tend to repeat predefined chunks as
-                          necessary.</p>
-                      </div>{/* /.inner */}
-                    </div>{/* /.accordion-content */}
-                  </div>{/* /.accordion-item */}
-                  <div className="accordion wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
-                    <div className="accordion-title">
-                      <h4>
-                        What is the interest rate on a loan?
-                        <span className="accordion-title__icon" />{/* /.accordion-title__icon */}
-                      </h4>
-                    </div>{/* /.accordion-title */}
-                    <div className="accordion-content">
-                      <div className="inner">
-                        <p>Bring to the table win-win survival strategies to ensure proactive
-                          domination. At
-                          the
-                          end of the day, going forward, a new normal that has evolved from generation
-                          X
-                          is on
-                          the</p>
-                      </div>{/* /.inner */}
-                    </div>{/* /.accordion-content */}
-                  </div>{/* /.accordion-item */}
-                </div>{/* /.faq-accordion */}
-              </div>{/* /.faq-one__accordion */}
-            </div>{/* /.faq-one__content */}
-          </div>{/* /.col-lg-6 */}
-        </div>{/* /.row gutter-y-50 */}
-      </div>{/* /.container */}
-      <img src="assets/images/shapes/faq-shape-1-1.png" alt="shape" className="faq-one__shape" />
-    </section>{/* /.faq-one section-space */}
+    <section className="loan-process" style={{ padding: '50px 0', backgroundColor: '#f4f4f4' }}>
+  <div className="container">
+    <div className="row">
+      <div className="col-lg-12">
+        <h2 style={{ textAlign: 'center', color: '#2198CF', marginBottom: '40px' }}>
+          Business Loan Step-by-Step Process
+        </h2>
+        <div className="row">
+          <div className="col-lg-4">
+            <div style={{ padding: '20px', backgroundColor: '#fff', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', textAlign: 'center' }}>
+                            <h3 style={{ color: '#2198CF', marginBottom: '10px' }}>Pre Qualification</h3>
+              <p style={{ color: '#333' }}>
+                Begin the process by completing a prequalification application online, or with one of our business loan experts. This step helps us understand your financial situation and determine how much you may be eligible to borrow.
+              </p>
+            </div>
+          </div>
+          <div className="col-lg-4">
+            <div style={{ padding: '20px', backgroundColor: '#fff', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', textAlign: 'center' }}>
+         
+              <h3 style={{ color: '#2198CF', marginBottom: '10px' }}>Documentation Gathering</h3>
+              <p style={{ color: '#333' }}>
+                Gather and submit the necessary financial documents, income statements, ownership documents, bank statements, and tax returns. This documentation is crucial for your business loan application.
+              </p>
+            </div>
+          </div>
+          <div className="col-lg-4">
+            <div style={{ padding: '20px', backgroundColor: '#fff', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', textAlign: 'center' }}>
+
+              <h3 style={{ color: '#2198CF', marginBottom: '10px' }}>Loan Application</h3>
+              <p style={{ color: '#333' }}>
+                Our team will assist you in completing a formal loan application. We'll help you select the right loan program and guide you through the application process.
+              </p>
+            </div>
+          </div>
+          <div className="col-lg-4">
+            <div style={{ padding: '20px', backgroundColor: '#fff', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', textAlign: 'center' }}>
+
+              <h3 style={{ color: '#2198CF', marginBottom: '10px' }}>Loan Processing</h3>
+              <p style={{ color: '#333' }}>
+                Once your application is submitted, our experienced business loan experts will review and verify your documents, income statements, credit history, and application details. This step ensures your application is accurate and complete.
+              </p>
+            </div>
+          </div>
+          <div className="col-lg-4">
+            <div style={{ padding: '20px', backgroundColor: '#fff', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', textAlign: 'center' }}>
+                            <h3 style={{ color: '#2198CF', marginBottom: '10px' }}>Underwriting</h3>
+              <p style={{ color: '#333' }}>
+                Your application will be sent to our underwriting team for a thorough evaluation. They will assess the risk associated with your loan and make a final decision on its approval.
+              </p>
+            </div>
+          </div>
+          <div className="col-lg-4">
+            <div style={{ padding: '20px', backgroundColor: '#fff', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', textAlign: 'center' }}>
+                            <h3 style={{ color: '#2198CF', marginBottom: '10px' }}>Funding</h3>
+              <p style={{ color: '#333' }}>
+                Congratulations! Upon approval, we'll coordinate the funding process, where you'll sign the necessary documents and finalize the business loan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
    
   
     <section className="blog-one section-space-top" id="blog">
