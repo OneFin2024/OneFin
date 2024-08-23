@@ -12,7 +12,7 @@ interface LoanApplication {
 }
 
 // API URL
-const API_URL = 'http://localhost:3001/loanApplication';
+const API_URL = `${process.env.REACT_APP_API_URL}/loanApplication`;
 
 // API service functions
 const getAllLoanApplications = async () => {

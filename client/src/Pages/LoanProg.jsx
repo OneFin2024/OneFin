@@ -53,7 +53,7 @@ function LoanProg() {
     console.log('FormData:', formData);
   
     try {
-      const response = await axios.post('http://localhost:3001/api/uploadDoc', formData, {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/uploadDo`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
