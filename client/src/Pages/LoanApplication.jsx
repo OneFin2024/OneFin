@@ -178,7 +178,7 @@ function LoanApplication() {
 
     try {
       console.log(formData);
-      const response = await axios.post('http://localhost:3001/api/Prequalify/addPrequalify', loanApplicationData);
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/Prequalify/addPrequalify`, loanApplicationData);
       console.log('Form submitted successfully:', response.data);
       handleShow();
     } catch (error) {
