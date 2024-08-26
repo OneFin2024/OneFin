@@ -33,14 +33,14 @@ services:
       PMA_HOST: db
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
   
-  server:
+  backend:
     depends_on:
       db:
         condition: service_healthy
     image: onefin-server:0.0.1
     restart: always
     ports:
-      - "8080:80"
+      - "8080:3001"
     build:
         context: ./server
         dockerfile : Dockerfile
@@ -50,10 +50,11 @@ services:
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
       DB_HOST: db
+      JWT_KEY: ${JWT_KEY}
 
   client:
     depends_on:
-      - server
+      - backend
     image: onefin-client:0.0.1
     build:
         context: ./client
@@ -66,7 +67,7 @@ services:
   
   admin:
     depends_on:
-      - server
+      - backend
     image: onefin-admin:0.0.1
     build:
         context: ./admin
@@ -85,7 +86,7 @@ services:
     depends_on:
       - client
       - admin
-      - server
+      - backend
     command: [nginx-debug, '-g', 'daemon off;']
     restart: always
 
